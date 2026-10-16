@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pilipinas Travel - Itineraries</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/itineraries.css">
+    </head>
+    <body>
+        <header>
+            <div class="nav-inner">
+                <a href="#top" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <nav class="links" id="mainNav">
+                    <a href="home.html">Home</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="experiences.html">Experiences</a>
+                    <a href="itineraries.html" class="active">Itineraries</a>
+                    <a href="about.html">About Us</a>
+                </nav>
+                <button class="btn btn-terracotta" id="tripPlannerBtn">My Trip Planner</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero">
+                <div class="eyebrow">Trip Planning & Logistics</div>
+                <h1 class="serif">The Art of Travel, Planned on Purpose</h1>
+                <p>Equip yourself with digital regional map, safety protocols, and a personalized offline itinerary planner designed to protect both you and local heritage on the road.</p>
+            </div>
+
+            <!-- TRANSIT HUB -->
+            <section class="section-tan-bg">
+                <div class="section-head">
+                    <div class="eyebrow">Transit Hub</div>
+                    <h2 class="serif">Interactive Map & Routes</h2>
+                    <p>Navigate verified routes, cultural spots, transit terminals, and clean public utilities built in collaboration with municipal.</p>
+                </div>
+
+                <div class="map-grid">
+                    <div class="map-card map-illustration">
+                        <span class="map-label label-coron">Coron</span>
+                        <span class="map-label label-boracay">Boracay</span>
+                        <span class="map-label label-bohol">Bohol</span>
+                    </div>
+
+                    <div class="poiToggle">
+                        <h3 class="serif">Points of Interests</h3>
+                        <p>Toggle selection of interests to display on the interactive GIS map.</p>
+
+                        <div class="poi-row">
+                            <span class="poi-label"><span class="poi-dot" style="background:#c86b3d;"></span>Historical Attractions</span>
+                            <button class="toggle isOn" data-layer="historical"><span class="sr-only">Toggle Historical Attractions layer</span></button>
+                        </div>
+                        <div class="poi-row">
+                            <span class="poi-label"><span class="poi-dot" style="background:#c86b3d;"></span>Public Transit Terminals</span>
+                            <button class="toggle isOn" data-layer="transit"><span class="sr-only">Toggle Public Transit Terminals layer</span></button>
+                        </div>
+                        <div class="poi-row">
+                            <span class="poi-label"><span class="poi-dot" style="background:#6b6055;"></span>Official Visitor Centers</span>
+                            <button class="toggle" data-layer="visitor"><span class="sr-only">Toggle Official Visitor Centers layer</span></button>
+                        </div>
+                        <div class="poi-row">
+                            <span class="poi-label"><span class="poi-dot" style="background:#c86b3d;"></span>Emergency Medical Stations</span>
+                            <button class="toggle isOn" data-layer="medical"><span class="sr-only">Toggle Emergency Medical Stations layer</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Transit Hub-->
+                <div style="margin-top: 45px;">
+                    <h3 class="transit-title serif">Scheduled Pathways</h3>
+                    <div class="transit-grid">
+                        <div class="transit-card">
+                            <div class="colHeader">
+                                <h4 class="serif">Chocolate Hills, Bohol</h4><span class="price">₱799 Round trip</span>
+                            </div>
+                            <div>
+                                <span class="stop-label">Route Stops</span>
+                                <p class="stops">Tagbilaran City → Blood Compact Shrine → Philippine Tarsier Sanctuary → Bilar Man-Made Forest → Chocolate Hills</p>
+                            </div>
+                        </div>
+                        <div class="transit-card">
+                            <div class="colHeader">
+                                <h4 class="serif">Boracay, Aklan</h4><span class="price">₱699 One-way</span>
+                            </div>
+                            <div>
+                                <span class="stop-label">Route Stops</span>
+                                <p class="stops">Caticlan Airport → Caticlan Jetty Port → Boracay Port → D'Mall → White Beach → Puka Shell Beach</p>
+                            </div>
+                        </div>
+                        <div class="transit-card">
+                            <div class="colHeader">
+                                <h4 class="serif">Coron, Palawan</h4><span class="price">$499 One-way</span>
+                            </div>
+                            <div>
+                                <span class="stop-label">Route Stops</span>
+                                <p class="stops">Busuanga Airport → Coron Town → Lualhati Park → Mt. Tapyas → Maquinit Hot Spring</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SAFETY / ADVISORIES -->
+            <section>
+                <div class="section-head">
+                    <div class="eyebrow">Traveler Safety & Advisories</div>
+                    <h2 class="serif">Practical Guidelines & Directives</h2>
+                    <p>Examined information compiled by regional authorities to make your transition into local communities respectful, law-abiding, and secure.</p>
+                </div>
+                <div class="adv-grid">
+                    <div class="adv-card">
+                        <div class="adv-tag-row"><span class="adv-tag">Customs & Etiquette</span></div>
+                        <h3 class="serif">Heritage Courtesies</h3>
+                        <p>When visiting active monastic grounds or ancient ruins, keep shoulders covered. Always request consent before taking photographs of resident artisans and town elders.</p>
+                    </div>
+                    <div class="adv-card important">
+                        <div class="adv-tag-row">
+                            <span class="adv-tag" style="margin-right:auto;">Weather Advisory</span>
+                        </div>
+                        <h3 class="serif">High-Altitude Changes</h3>
+                        <p>The Eldorado Highlands experience rapid temperature drops post-sunset. Visitors are strongly advised to carry thermal outer layers and waterproof utility gear.</p>
+                    </div>
+                </div>
+                <div class="adv-grid">
+                    <div class="adv-card">
+                        <div class="adv-tag-row"><span class="adv-tag">Entry Requirements</span></div>
+                        <h3 class="serif">Visa & Compliance</h3>
+                        <p>Travelers staying under 30 days are eligible for stamp-upon-arrival entry. Ensure passport validity extends a minimum of six months past your scheduled return departure date.</p>
+                    </div>
+                    <div class="adv-card">
+                        <div class="adv-tag-row"><span class="adv-tag">Local Exchange</span></div>
+                        <h3 class="serif">Currency & Tipping</h3>
+                        <p>While city passes are digitally integrated, mountain villages strictly operate via cash local currency. Keep small denominations handy; tipping is appreciated but not mandatory.</p>
+                    </div>
+                    <div class="adv-card important">
+                        <div class="adv-tag-row">
+                            <span class="adv-tag" style="margin-right:auto;">Emergency Support</span>
+                        </div>
+                        <h3 class="serif">Municipal Hotline Hub</h3>
+                        <p>In case of medical emergencies or mountain trail misdirection, connect immediately to our active rescue coordinators. Dial 112 from any regional cell connection.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ITINERARY BUILDER -->
+            <section class="section-tan-bg" id="dashboard">
+                <div class="dash-head">
+                    <div class="copy">
+                        <div class="eyebrow">Itinerary Builder</div>
+                        <h2 class="serif">My Trip Dashboard</h2>
+                        <p>Formulate your daily path, register travel tickets, and compile offline maps for remote highland trails.</p>
+                    </div>
+                </div>
+
+                <div class="dash-grid">
+                    <div class="side-card">
+                        <h3 class="serif">Saved Locations</h3>
+                        <div class="saved-list" id="savedList">
+                            <div class="saved-row" data-name="Catanduanes">
+                                <span>Catanduanes</span>
+                            </div>
+                            <div class="saved-row" data-name="Camarines Sur">
+                                <span>Camarines Sur</span>
+                            </div>
+                            <div class="saved-row" data-name="Albay">
+                                <span>Albay</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-ink" id="exportBtn">Export Offline Guide (PDF)</button>
+                    </div>
+
+                    <div class="itinerary-card">
+                        <h3 class="serif">Sample 3-Day Boracay, Aklan Exploration</h3>
+
+                        <div class="day-tabs-header">
+                            <span class="day-tab active">Day 1</span>
+                            <h4 class="serif">Transit & The Cental Hub</h4>
+                            <span class="date">• Oct 12, 2026</span>
+                            <!-- <span class="day-tab">Day 2</span>
+                            <span class="day-tab">Day 3</span> -->
+                        </div>
+                        <div class="day-panel">
+                            <div class="day-slot"><span class="time">Morning</span><span class="desc">Arrive at the airport, collect your bags, and take a quick van ride to the jetty.</span></div>
+                            <div class="day-slot"><span class="time">Afternoon</span><span class="desc">Complete the short boat crossing and prepare to head to your accommodation. Walk around the vibrant outdoor mall to pick up any forgotten beach essentials or grab a quick coffee.</span></div>
+                            <div class="day-slot"><span class="time">Evening</span><span class="desc">Enjoy a relaxed dinner in the area before getting some rest after a long travel day.</span></div>
+                        </div>
+                        
+                        <div class="hr"></div>
+
+                        <div class="day-tabs-header">
+                            <span class="day-tab active">Day 2</span>
+                            <h4 class="serif">The Iconic White Beach</h4>
+                            <span class="date">• Oct 13, 2026</span>
+                            <!-- 
+                            <span class="day-tab">Day 3</span> -->
+                        </div>
+                        <div class="day-panel">
+                            <div class="day-slot"><span class="time">Morning</span><span class="desc">Hit the beach early for a workout or a quiet walk along the shore.</span></div>
+                            <div class="day-slot"><span class="time">Afternoon</span><span class="desc">Rent a paddleboard, go snorkeling, or grab a fresh fruit shake from a beachfront vendor.</span></div>
+                            <div class="day-slot"><span class="time">Evening</span><span class="desc">Secure a spot on the sand to watch the iconic Boracay sunset, followed by dinner and enjoying the island's lively beachfront nightlife.</span></div>
+                        </div>
+
+                        <div class="hr"></div>
+
+                        <div class="day-tabs-header">
+                            <span class="day-tab active">Day 3</span>
+                            <h4 class="serif">The Iconic White Beach</h4>
+                            <span class="date">• Oct 14, 2026</span>
+                        </div>
+                        <div class="day-panel">
+                            <div class="day-slot"><span class="time">Morning</span><span class="desc">Swim in the clear waters and relax away from the busy central stations.</span></div>
+                            <div class="day-slot"><span class="time">Afternoon</span><span class="desc">Head back toward the port area for a relaxed coffee break before the return journey.</span></div>
+                            <div class="day-slot"><span class="time">Evening</span><span class="desc">Begin your return sequence: ride back to the Boracay Jetty Port, ferry over to the Caticlan Jetty Port, and head back to the airport for your flight home.</span></div>
+                        </div>
+
+                        <div class="hr"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3 class="serif">Pilipinas Travel</h3>
+                    <p>A modern travel system crafted to guide the thoughtful explorer through local communities, cultural heritage, and ecological wonders.</p>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Discovery</span>
+                    <a href="#">Landmarks</a>
+                    <a href="#">National Parks</a>
+                    <a href="#">Heritage</a>
+                    <a href="#">Curated Guides</a>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Booking</span>
+                    <a href="#">Guided Tours</a>
+                    <a href="#">Passes &amp; Bundles</a>
+                    <a href="#">Day Excursions</a>
+                    <a href="#">Eco Stays</a>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Support</span>
+                    <a href="#">Travel Advice</a>
+                    <a href="#">Local Directories</a>
+                    <a href="#">Emergency Hub</a>
+                    <a href="#">Transit Info</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Pilipinas Travel Tourism System. All rights reserved.</span>
+                <div class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
