@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pilipinas Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/destinations.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">✦</span>
+        <span class="serif">Pilipinas Travel</span>
+      </a>
+
+      <nav class="links" id="mainNav">
+        <a href="home.html">Home</a>
+        <a href="destinations.html" class="active">Destinations</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="itineraries.html">Itineraries</a>
+        <a href="about.html">About Us</a>
+      </nav>
+
+      <button class="btn btn-terracotta" id="tripPlannerBtn">My Trip Planner</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="eyebrow">Destination Discovery</div>
+        <h1>Discover the Untold</h1>
+        <p>
+          Filter through regional landmarks, ecological zones, and curated
+          pathways designed to immerse you into genuine local life.
+        </p>
+      </section>
+
+      <section class="filter-section">
+        <div class="categories">
+          <button class="cat-btn active" data-filter="all">
+            All Locations
+          </button>
+
+          <button class="cat-btn" data-filter="Cultural Sites">
+            Cultural Sites
+          </button>
+
+          <button class="cat-btn" data-filter="Natural Parks">
+            Natural Parks
+          </button>
+
+          <button class="cat-btn" data-filter="Historic Landmarks">
+            Historic Landmarks
+          </button>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Filter by neighborhood..."
+          >
+        </div>
+
+      </section>
+
+      <section class="grid" id="cardsGrid">
+        <article class="card" data-category="Cultural Sites">
+          <div class="card-img-wrapper">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort_Santiago%2C_Intramuros%2C_Manila.jpg"
+              alt="Fort Santiago"
+              class="card-img"
+            >
+          </div>
+
+          <div class="card-content">
+            <div class="card-header">
+              <span class="tag">Cultural Sites</span>
+            </div>
+
+            <h3>Fort Santiago</h3>
+
+            <div class="card-details">
+              <div class="detail-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                08:30 - 17:00
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                Free Admission
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-wheelchair" aria-hidden="true"></i>
+                Ramped Paths
+              </div>
+            </div>
+
+            <button class="btn-outline card-details-btn">View Details</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="Natural Parks">
+          <div class="card-img-wrapper">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/PUERTO_PRINCESA_UNDERGROUND_RIVER.jpg"
+              alt="Puerto Princesa"
+              class="card-img"
+            >
+          </div>
+
+          <div class="card-content">
+            <div class="card-header">
+              <span class="tag">Natural Parks</span>
+            </div>
+
+            <h3>Puerto Princesa Subterranean River</h3>
+
+            <div class="card-details">
+              <div class="detail-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                Sunrise - Sunset
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                ₱50 Ecosystem Fee
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-wheelchair" aria-hidden="true"></i>
+                All-terrain Wheelchair paths
+              </div>
+            </div>
+
+            <button class="btn-outline card-details-btn">View Details</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="Historic Landmarks">
+          <div class="card-img-wrapper">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Calle_Crisologo_Vigan_City.jpg"
+              alt="Vigan"
+              class="card-img"
+            >
+          </div>
+
+          <div class="card-content">
+            <div class="card-header">
+              <span class="tag">Historic Landmarks</span>
+            </div>
+
+            <h3>Historic City of Vigan</h3>
+
+            <div class="card-details">
+              <div class="detail-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                09:00 - 19:30
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                Free admission
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-wheelchair" aria-hidden="true"></i>
+                Walkable Paths
+              </div>
+            </div>
+
+            <button class="btn-outline card-details-btn">View Details</button>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="expeditions-section">
+      <div class="container">
+        <div class="eyebrow">
+          Curated Itineraries & Guides
+        </div>
+
+        <h2 class="expeditions-title">Pre-Planned Regional Expeditions</h2>
+
+        <div class="expeditions-layout">
+          <div class="sidebar">
+            <h4>Select Category</h4>
+
+            <button class="region-btn active">Interest</button>
+            <button class="region-btn">Duration</button>
+            <button class="region-btn">Travel Style</button>
+          </div>
+
+          <div class="itinerary-stack">
+            <div class="itinerary-card">
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                class="itinerary-img"
+                alt="Ridge"
+              >
+
+              <div class="itinerary-info">
+                <div class="itinerary-badges">
+                  <span class="badge-gray">5 Days</span>
+                  <span class="badge-orange">Eco-Tourism</span>
+                  <span class="badge-gray">Difficulty: Moderate</span>
+                </div>
+
+                <h3>Eco-Treasures of the Ridge & Coast</h3>
+
+                <div class="itinerary-meta">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Day 1: Valley Hike • Day 2: Bird Sanctuary • Day 3:
+                  Coastal Kayaking
+                </div>
+              </div>
+
+              <button class="btn-save save-btn">Save Path</button>
+            </div>
+
+            <div class="itinerary-card">
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+                class="itinerary-img"
+                alt="Bread"
+              >
+
+              <div class="itinerary-info">
+                <div class="itinerary-badges">
+                  <span class="badge-gray">3 Days</span>
+                  <span class="badge-orange">Culinary & Crafts</span>
+                  <span class="badge-gray">Difficulty: Easy</span>
+                </div>
+
+                <h3>The Slow Bread & Craft Route</h3>
+
+                <div class="itinerary-meta">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Day 1: Sourdough Mill • Day 2: Woodcarver Atelier •
+                  Day 3: Vineyard Dinner
+                </div>
+              </div>
+
+              <button class="btn-save save-btn">Save Path</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3 class="serif">Pilipinas Travel</h3>
+        <p>
+          A modern travel system crafted to guide the thoughtful explorer
+          through local communities, cultural heritage, and ecological wonders.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <span class="h">Discovery</span>
+        <a href="#">Landmarks</a>
+        <a href="#">National Parks</a>
+        <a href="#">Heritage</a>
+        <a href="#">Curated Guides</a>
+      </div>
+
+      <div class="footer-col">
+        <span class="h">Booking</span>
+        <a href="#">Guided Tours</a>
+        <a href="#">Passes &amp; Bundles</a>
+        <a href="#">Day Excursions</a>
+        <a href="#">Eco Stays</a>
+      </div>
+
+      <div class="footer-col">
+        <span class="h">Support</span>
+        <a href="#">Travel Advice</a>
+        <a href="#">Local Directories</a>
+        <a href="#">Emergency Hub</a>
+        <a href="#">Transit Info</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Pilipinas Travel Tourism System. All rights reserved.</span>
+      <div class="legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const categoryButtons = document.querySelectorAll(".cat-btn");
+    const cards = document.querySelectorAll(".card");
+    const searchInput = document.getElementById("searchInput");
+
+    categoryButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        categoryButtons.forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        cards.forEach(function (card) {
+          card.style.display =
+            filter === "all" || card.getAttribute("data-category") === filter
+              ? "flex"
+              : "none";
+        });
+      });
+    });
+
+    searchInput.addEventListener("input", function () {
+      const searchText = searchInput.value.toLowerCase();
+
+      cards.forEach(function (card) {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const tag = card.querySelector(".tag").textContent.toLowerCase();
+        card.style.display =
+          title.includes(searchText) || tag.includes(searchText)
+            ? "flex"
+            : "none";
+      });
+    });
+
+    document.getElementById("plannerBtn").addEventListener("click", function () {
+      alert("Opening Trip Planner...");
+    });
+
+    document.querySelectorAll(".card-details-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const card = button.closest(".card");
+        const title = card.querySelector("h3").textContent;
+        alert("Viewing details for: " + title);
+      });
+    });
+
+    document.querySelectorAll(".save-btn").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const itinerary = button.closest(".itinerary-card");
+        const title = itinerary.querySelector("h3").textContent;
+        alert("Saved itinerary: " + title);
+      });
+    });
+  </script>
+
+</body>
+</html>
