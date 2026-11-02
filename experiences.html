@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pilipinas Travel - Experiences</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/experiences.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <header>
+            <div class="nav-inner">
+                <a href="#top" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <nav class="links" id="mainNav">
+                    <a href="home.html">Home</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="experiences.html" class="active">Experiences</a>
+                    <a href="itineraries.html">Itineraries</a>
+                    <a href="about.html">About Us</a>
+                </nav>
+                <button class="btn btn-terracotta" id="tripPlannerBtn">My Trip Planner</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <div class="hero">
+                <div class="eyebrow">Tours & Bookings</div>
+                <h1 class="serif">Authorized Local Experiences</h1>
+                <p>Every reservation directly sustains local hosts, neighborhood preservation efforts, and heritage initiatives.</p>
+            </div>
+
+            <!-- Filterable Activities -->
+            <form class="filter">
+                <div class="filter-section">
+                    <label>Activity Type</label>
+                    <input type="text" placeholder="Water Sports, Workshops, Hikes...">
+                </div>
+                <div class="filter-section">
+                    <label>Price Limit</label>
+                    <input type="number" placeholder="Under P15,000">
+                </div>
+                <button type="submit" class="filter-btn">Apply Filters</button>
+            </form>
+
+            <!-- Filter Cards -->
+            <section class="filter-card-wrapper">
+                <div class="filter-card">
+                    <img src="img/atv.jpg" alt="ATV Ride near Mayon Volcano" title="ATV Ride">
+                    <div class="card">
+                        <div class="filter-header">
+                            <div class="filter-details">
+                                <div class="slot-wrapper"><span class="slot-text">3 Slots Left Today</span></div>
+                                <p class="price-head">P2,500 / head</p>
+                            </div>
+                            <h3 class="filter-activity serif">ATV Ride near Mayon Volcano</h3>
+                        </div>
+                        <ul class="filter-details2">
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-clock"></i></span>
+                                <span class="filter-duration">Duration: 4.5 Hours</span>
+                            </li>
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-star"></i></span>
+                                <span class="filter-reviews">4.9 (180 reviews)</span>
+                            </li>
+                        </ul>
+                        <button type="button" class="filter-card-button">
+                            <span>Book Experience Now</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filter-card">
+                    <img src="img/whale sharks.jpeg" alt="Swim with Whale Sharks in Donsol" title="Swim with Whale Sharks">
+                    <div class="card">
+                        <div class="filter-header">
+                            <div class="filter-details">
+                                <div class="slot-wrapper"><span class="slot-text">Available Tomorrow</span></div>
+                                <p class="price-head">P1,320 / head</p>
+                            </div>
+                            <h3 class="filter-activity serif">Swim with Whale Sharks in Donsol</h3>
+                        </div>
+                        <ul class="filter-details2">
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-clock"></i></span>
+                                <span class="filter-duration">Duration: 30 Minutes</span>
+                            </li>
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-star"></i></span>
+                                <span class="filter-reviews">5.0 (90 reviews)</span>
+                            </li>
+                        </ul>
+                        <button type="button" class="filter-card-button">
+                            <span>Book Experience Now</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filter-card">
+                    <img src="img/island hopping.jpg" alt="Island Hopping in Caramoan" title="Island Hopping">
+                    <div class="card">
+                        <div class="filter-header">
+                            <div class="filter-details">
+                                <div class="slot-wrapper"><span class="slot-text">Available Saturday</span></div>
+                                <p class="price-head">P1,850 / head</p>
+                            </div>
+                            <h3 class="filter-activity serif">Island Hopping in Caramoan</h3>
+                        </div>
+                        <ul class="filter-details2">
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-clock"></i></span>
+                                <span class="filter-duration">Duration: 45 Minutes</span>
+                            </li>
+                            <li class="filter-details2-wrap">
+                                <span class="filter-icons"><i class="fa-regular fa-star"></i></span>
+                                <span class="filter-reviews">4.8 (210 reviews)</span>
+                            </li>
+                        </ul>
+                        <button type="button" class="filter-card-button">Book Experience Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- City Passes & Package Bundles -->
+            <section class="section-tan-bg">
+                <div class="section-head">
+                    <div class="eyebrow">City Passes & Package Bundles</div>
+                    <h2 class="serif">Combined Travel Passes</h2>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="serif">Cagsawa Ruins Explorer Pass</h3>
+                            <span class="card-discount">Save 35%</span>
+                        </div>
+                        <ul class="card-details">
+                            <li>
+                                <span class="card-icon"><i class="fa-solid fa-train"></i></span>
+                                <span class="card-service">Unlimited Rail & Coaster Service</span>
+                            </li>
+                            <li>
+                                <span class="card-icon"><i class="fa-regular fa-square-check"></i></span>
+                                <span class="card-activity">Access to ATV and Hot Spring Resort</span>
+                            </li>
+                            <li>
+                                <span class="card-icon"><i class="fa-regular fa-calendar"></i></span>
+                                <span class="card-validity">7 Days Validity</span>
+                            </li>
+                        </ul>
+                        <span class="pass-duration">Select Pass Duration</span>
+                        <div class="card-select">
+                            <span class="active">P899 (1-Day)</span>
+                            <span>P1,299 (3-Days)</span>
+                            <span>P1,999 (1 Week)</span>
+                        </div>
+                        <button type="button" class="card-button">Purchase Explorer Pass</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="serif">Caramoan Island Hopping Pass</h3>
+                            <span class="card-discount">Save 40%</span>
+                        </div>
+                        <ul class="card-details">
+                            <li>
+                                <span class="card-icon"><i class="fa-solid fa-train"></i></span>
+                                <span class="card-service">Coaster/Van Service</span>
+                            </li>
+                            <li>
+                                <span class="card-icon"><i class="fa-regular fa-square-check"></i></span>
+                                <span class="card-activity">Free Other Water Activities</span>
+                            </li>
+                            <li>
+                                <span class="card-icon"><i class="fa-regular fa-calendar"></i></span>
+                                <span class="card-validity">5 Days Validity</span>
+                            </li>
+                        </ul>
+                        <span class="pass-duration">Select Pass Duration</span>
+                        <div class="card-select">
+                            <span class="active">P999 (1-Day)</span>
+                            <span>P1,499 (3-Days)</span>
+                            <span>P1,999 (1 Week)</span>
+                        </div>
+                        <button type="button" class="card-button">Purchase Explorer Pass</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Local Directory & Live Guide -->
+            <section class="directory">
+                <div class="section-head-dir">
+                    <div class="eyebrow">Local Directory & Live Guide</div>
+                    <h1 class="serif">Connect with true local life</h1>
+                    <p>Access our comprehensive registry of regional festivals, markets, seasonal arts programs, eco-accommodations, and authentic dining hotspots.</p>
+                </div>
+            </section>
+
+            <!-- Live Calendar -->
+            <section class="section-tan-bg">
+                <div class="section-head">
+                    <div class="eyebrow">Live Calendar</div>
+                    <h2 class="serif">Community Gatherings & Seasonal Celebrations</h2>
+                    <p>Plan your travels around local harvests, regional music ensembles, and independent craft workshops curated directly with local preservation councils.</p>
+                </div>
+
+                <div class="filter-choices">
+                    <button type="button" class="btn-1 active">All Gatherings</button>
+                    <button type="button" class="btn-2">Festivals & Markets</button>
+                    <button type="button" class="btn-3">Music & Performance</button>
+                    <button type="button" class="btn-4">Sports</button>
+                </div>
+
+                <div class="card2">
+                    <div class="card-content2">
+                        <span class="activity-date serif">Oct 14</span>
+                        <img src="img/tinagba.jpeg" alt="Tinagba Festival" title="Tinagba Festival">
+                        <div class="card-header2">
+                            <div class="card-title">
+                                <span>Local Festival</span>
+                                <h3 class="serif">Tinagba Festival</h3>
+                            </div>
+                            <ul class="card-loc">
+                                <li>
+                                    <span class="card-icon2"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="card-gathering">Iriga City, Bicol Region</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content2">
+                        <span class="activity-date serif">Oct 19</span>
+                        <img src="img/kaogma.jpg" alt="Kaogma Festival" title="Kaogma Festival">
+                        <div class="card-header2">
+                            <div class="card-title">
+                                <span>Local Festival</span>
+                                <h3 class="serif">Kaogma Festival</h3>
+                            </div>
+                            <ul class="card-loc">
+                                <li>
+                                    <span class="card-icon2"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="card-gathering">Camarines Sur, Bicol Region</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content2">
+                        <span class="activity-date serif">Oct 22</span>
+                        <img src="img/abaca.jpeg" alt="Abaca Festival" title="Abaca Festival">
+                        <div class="card-header2">
+                            <div class="card-title">
+                                <span>Local Festival</span>
+                                <h3 class="serif">Abaca Festival</h3>
+                            </div>
+                            <ul class="card-loc">
+                                <li>
+                                    <span class="card-icon2"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="card-gathering">Catanduanes, Bicol Region</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stay & Eat Directory -->
+            <section class="stay-eat">
+                <div class="stay-head">
+                    <div class="eyebrow">Stay & Eat Directory</div>
+                    <h2 class="serif">A Directory of Locally Owned Establishments</h2>
+                    <p>Every hotel, slow-food kitchen, independent guest house, and bakery in our index is chosen for its commitment to local sourcing and design heritage.</p>
+                </div>
+
+                <!-- Directory Filters -->
+                <form class="stay-filters">
+                    <div class="stay-select">
+                        <label for="categoryType">Category Type</label>
+                        <select id="categoryType">
+                            <option>All Establishments</option>
+                            <option>Eco Stays & Hotels</option>
+                            <option>Restaurants & Cafes</option>
+                            <option>Villa</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="stay-select">
+                        <label for="neighborhood">Neighborhood</label>
+                        <select id="neighborhood">
+                            <option>Bicol Region</option>
+                            <option>Batangas</option>
+                            <option>Cavite</option>
+                            <option>Rizal</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="stay-select">
+                        <label for="priceRange">Price Range</label>
+                        <select id="priceRange">
+                            <option>Any Price Point</option>
+                            <option>Budget</option>
+                            <option>Mid-range</option>
+                            <option>Luxury</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="stay-select">
+                        <label for="cuisineStyle">Cuisine / Style</label>
+                        <select id="cuisineStyle">
+                            <option>All Cuisines & Services</option>
+                            <option>Filipino</option>
+                            <option>Bakery</option>
+                            <option>Farm-to-Table</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </form>
+
+                <!-- Directory Cards -->
+                <div class="stay-grid">
+                    <article class="stay-card">
+                        <img src="img/theFarm.jpg" alt="The Farm at San Benito" title="The Farm at San Benito">
+                        <div class="stay-body">
+                            <div class="stay-top">
+                                <span class="stay-tag">Eco Stays & Hotels</span>
+                                <span class="stay-rating"><i class="fa-solid fa-star"></i>4.9 (184 reviews)</span>
+                            </div>
+                            <h3 class="stay-name serif">The Farm at San Benito</h3>
+                            <ul class="stay-info">
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="stay-text">Lipa, Batangas</span>
+                                </li>
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-peso-sign"></i></span>
+                                    <span class="stay-text">Price Point: Php</span>
+                                </li>
+                            </ul>
+                            <button type="button" class="stay-btn">View Full Profile</button>
+                        </div>
+                    </article>
+
+                    <article class="stay-card">
+                        <img src="img/agapita.jpeg" alt="Cafe Agapita" title="Cafe Agapita">
+                        <div class="stay-body">
+                            <div class="stay-top">
+                                <span class="stay-tag">Restaurants & Cafes</span>
+                                <span class="stay-rating"><i class="fa-solid fa-star"></i> 4.8 (250 reviews)</span>
+                            </div>
+                            <h3 class="stay-name serif">Cafe Agapita</h3>
+                            <ul class="stay-info">
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="stay-text">Silang, Cavite</span>
+                                </li>
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-peso-sign"></i></span>
+                                    <span class="stay-text">Price Point: Php</span>
+                                </li>
+                            </ul>
+                            <button type="button" class="stay-btn">View Full Profile</button>
+                        </div>
+                    </article>
+
+                    <article class="stay-card">
+                        <img src="img/theBeach.jpeg" alt="The Beach Villa" title="The Beach Villa">
+                        <div class="stay-body">
+                            <div class="stay-top">
+                                <span class="stay-tag">Villa</span>
+                                <span class="stay-rating"><i class="fa-solid fa-star"></i> 4.7 (112 reviews)</span>
+                            </div>
+                            <h3 class="stay-name serif">The Beach Villa</h3>
+                            <ul class="stay-info">
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="stay-text">Binangonan, Rizal</span>
+                                </li>
+                                <li>
+                                    <span class="stay-icon"><i class="fa-solid fa-peso-sign"></i></span>
+                                    <span class="stay-text">Price Point: Php</span>
+                                </li>
+                            </ul>
+                            <button type="button" class="stay-btn">View Full Profile</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3 class="serif">Pilipinas Travel</h3>
+                    <p>A modern travel system crafted to guide the thoughtful explorer through local communities, cultural heritage, and ecological wonders.</p>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Discovery</span>
+                    <a href="#">Landmarks</a>
+                    <a href="#">National Parks</a>
+                    <a href="#">Heritage</a>
+                    <a href="#">Curated Guides</a>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Booking</span>
+                    <a href="#">Guided Tours</a>
+                    <a href="#">Passes &amp; Bundles</a>
+                    <a href="#">Day Excursions</a>
+                    <a href="#">Eco Stays</a>
+                </div>
+                <div class="footer-col">
+                    <span class="h">Support</span>
+                    <a href="#">Travel Advice</a>
+                    <a href="#">Local Directories</a>
+                    <a href="#">Emergency Hub</a>
+                    <a href="#">Transit Info</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Pilipinas Travel Tourism System. All rights reserved.</span>
+                <div class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
