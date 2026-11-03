@@ -1,0 +1,462 @@
+/* ---------- Shared auth pieces ---------- */
+.auth-modal .serif,
+.modal .serif,
+.signup-page .serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.eyebrow-center {
+    justify-content: center;
+}
+
+/* Nav: Log In + Sign Up */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-auth .btn:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+.nav-login {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.nav-login:hover {
+    color: var(--terracotta);
+}
+
+/* Hero buttons */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.btn-outline-light {
+    border: 1.5px solid #fff;
+    color: #fff;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: #fff;
+    color: var(--ink);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-google {
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    gap: 10px;
+}
+
+.btn-google:hover {
+    background: var(--cream);
+}
+
+.google-icon {
+    color: var(--terracotta);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.field-row {
+    display: flex;
+    gap: 16px;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    color: var(--ink);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="password"] {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.field input::placeholder {
+    color: var(--body);
+    opacity: .7;
+}
+
+.field input:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(200, 107, 61, .15);
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap input {
+    padding-right: 64px !important;
+}
+
+.toggle-pw {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--body);
+    cursor: pointer;
+}
+
+.check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--terracotta);
+    flex-shrink: 0;
+}
+
+.text-link {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: var(--terracotta-deep);
+}
+
+.form-row .text-link {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--body);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.switch-text {
+    text-align: center;
+    font-size: 13px;
+    color: var(--body);
+}
+
+/* ---------- Login modal ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(17, 30, 46, .65);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s ease;
+    overflow-y: auto;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 530px;
+    background: var(--white);
+    border-radius: 4px;
+    padding: 44px;
+    text-align: center;
+    transform: translateY(12px);
+    transition: transform .2s ease;
+    margin: auto;
+}
+
+.modal-overlay.open .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--body);
+}
+
+.modal-close:hover {
+    color: var(--terracotta);
+}
+
+.modal-brand {
+    justify-content: center;
+    margin: 0 0 12px;
+}
+
+.modal-brand .serif {
+    font-size: 32px;
+}
+
+.modal-title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.modal-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--body);
+    margin: 8px 0 28px;
+}
+
+.modal .auth-form {
+    text-align: left;
+}
+
+.modal .field label {
+    text-transform: uppercase;
+}
+
+/* ---------- Sign up page ---------- */
+.signup-page {
+    padding: 64px 80px 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+}
+
+.signup-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.signup-head h1 {
+    font-size: clamp(30px, 3.4vw, 40px);
+    font-weight: 400;
+}
+
+.signup-intro {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.signup-intro-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.signup-intro-text h2 {
+    font-size: clamp(30px, 3.4vw, 40px);
+    font-weight: 400;
+    line-height: 1.15;
+    max-width: 440px;
+}
+
+.signup-intro-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--body);
+    max-width: 280px;
+}
+
+.signup-intro img {
+    flex: 1;
+    width: 625px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* The centered Create Your Account section */
+.signup-card {
+    width: 100%;
+    max-width: 448px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 28px 32px;
+}
+
+.signup-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.signup-card-sub {
+    font-size: 13px;
+    color: var(--body);
+    margin: 4px 0 20px;
+}
+
+/* Password strength */
+.strength {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.strength-bars {
+    flex: 1;
+    display: flex;
+    gap: 4px;
+}
+
+.strength-bars span {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line);
+    transition: background .2s;
+}
+
+.strength-bars span.filled {
+    background: var(--terracotta);
+}
+
+.strength small {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--terracotta);
+    min-width: 40px;
+    text-align: right;
+}
+
+.error-msg {
+    font-size: 11px;
+    color: #b3261e;
+    min-height: 0;
+}
+
+.check-terms {
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+.check-terms a {
+    font-size: 13px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .nav-auth {
+        gap: 16px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .signup-page {
+        padding: 40px 24px 64px;
+    }
+
+    .signup-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .signup-intro img {
+        width: 100%;
+        height: 240px;
+    }
+
+    .signup-intro-text p {
+        max-width: none;
+    }
+
+    .modal {
+        padding: 32px 24px;
+    }
+
+    .modal-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+    .field-row {
+        flex-direction: column;
+    }
+}

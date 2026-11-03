@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pilipinas Travel - Sign Up</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/auth.css">
+    </head>
+    <body>
+        <header>
+            <div class="nav-inner">
+                <a href="home.html" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <nav class="links" id="mainNav">
+                    <a href="home.html">Home</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="experiences.html">Experiences</a>
+                    <a href="itineraries.html">Itineraries</a>
+                    <a href="about.html">About Us</a>
+                </nav>
+                <div class="nav-auth">
+                    <button class="btn btn-terracotta" type="button" disabled>My Trip Planner</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="signup-page">
+            <!-- Page heading -->
+            <div class="signup-head">
+                <div class="eyebrow eyebrow-center">Create Your Account</div>
+                <h1 class="serif">Join thousands of travelers exploring the Philippines</h1>
+            </div>
+
+            <!-- Intro + image -->
+            <section class="signup-intro">
+                <div class="signup-intro-text">
+                    <h2 class="serif">Begin your journey with a thoughtful travel companion.</h2>
+                    <p>Pilipinas Travel helps you move from inspiration to itinerary with a curated experience that feels personal, sustainable, and deeply rooted in local culture.</p>
+                </div>
+                <img src="img/lagoon.jpg" alt="Aerial view of a Philippine lagoon" title="Coron, Palawan">
+            </section>
+
+            <!-- Create Account card (centered) -->
+            <section class="signup-card">
+                <h2 class="serif">Create Your Account</h2>
+                <p class="signup-card-sub">Join thousands of travelers exploring the Philippines</p>
+
+                <form class="auth-form" id="signupForm">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" placeholder="e.g. Juan" required>
+                        </div>
+                        <div class="field">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" placeholder="e.g. Dela Cruz" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="juan.delacruz@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+63 917 123 4567">
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                            <button type="button" class="toggle-pw" data-target="password">Show</button>
+                        </div>
+                        <div class="strength" id="strength">
+                            <div class="strength-bars">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <small id="strengthLabel"></small>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Repeat password" required>
+                        <small class="error-msg" id="matchMsg"></small>
+                    </div>
+
+                    <label class="check check-terms">
+                        <input type="checkbox" id="terms" required>
+                        <span>I agree to the <a href="#" class="text-link">Terms of Service</a> and <a href="#" class="text-link">Privacy Policy</a></span>
+                    </label>
+
+                    <button type="submit" class="btn btn-terracotta btn-block">Create Account</button>
+
+                    <div class="divider"><span>or</span></div>
+
+                    <button type="button" class="btn btn-google btn-block">
+                        <span class="google-icon">@</span> Sign up with Google
+                    </button>
+
+                    <p class="switch-text">Already have an account? <a href="home.html" class="text-link">Log In</a></p>
+                </form>
+            </section>
+        </main>
+
+        <script src="scripts/auth.js"></script>
+    </body>
+</html>
