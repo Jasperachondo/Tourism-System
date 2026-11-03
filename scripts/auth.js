@@ -1,3 +1,31 @@
+const AUTH_API_URL = 'http://localhost:3000/api/auth';
+
+async function submitAuthRequest(path, values) {
+    let response;
+    try {
+        response = await fetch(`${AUTH_API_URL}/${path}`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(values)
+        });
+    } catch {
+        throw new Error('Could not reach the authentication server. Start it with npm start and try again.');
+    }
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+        throw new Error(result.message || 'The request failed. Please try again.');
+    }
+    return result;
+}
+
+function showAuthStatus(element, message, type) {
+    if (!element) return;
+    element.textContent = message;
+    element.className = `auth-status ${type}`;
+}
+
 /* ---------- Login modal (home.html) ---------- */
 const loginModal = document.getElementById('loginModal');
 
@@ -38,11 +66,25 @@ if (loginModal) {
 
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+        const status = document.getElementById('loginStatus');
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            // TODO: replace with real login logic
-            alert('Logged in!');
-            closeLogin();
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            showAuthStatus(status, '', '');
+            try {
+                const result = await submitAuthRequest('login', {
+                    email: document.getElementById('loginEmail').value,
+                    password: document.getElementById('loginPassword').value,
+                    remember: document.getElementById('remember').checked
+                });
+                document.getElementById('loginPassword').value = '';
+                showAuthStatus(status, result.message, 'success');
+            } catch (error) {
+                showAuthStatus(status, error.message, 'error');
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     }
 }
@@ -90,14 +132,33 @@ if (signupForm) {
     confirmPw.addEventListener('input', checkMatch);
     pw.addEventListener('input', checkMatch);
 
-    signupForm.addEventListener('submit', (e) => {
+    const status = document.getElementById('signupStatus');
+    signupForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (pw.value !== confirmPw.value) {
             matchMsg.textContent = 'Passwords do not match.';
             confirmPw.focus();
             return;
         }
-        // TODO: replace with real sign up logic
-        alert('Account created!');
+        matchMsg.textContent = '';
+        const submitButton = signupForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        showAuthStatus(status, '', '');
+        try {
+            const result = await submitAuthRequest('signup', {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: pw.value
+            });
+            pw.value = '';
+            confirmPw.value = '';
+            showAuthStatus(status, result.message, 'success');
+        } catch (error) {
+            showAuthStatus(status, error.message, 'error');
+        } finally {
+            submitButton.disabled = false;
+        }
     });
 }

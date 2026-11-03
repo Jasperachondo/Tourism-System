@@ -73,7 +73,7 @@
                     <div class="field">
                         <label for="password">Password</label>
                         <div class="input-wrap">
-                            <input type="password" id="password" placeholder="Create a strong password" required>
+                            <input type="password" id="password" placeholder="Create a strong password" minlength="8" required>
                             <button type="button" class="toggle-pw" data-target="password">Show</button>
                         </div>
                         <div class="strength" id="strength">
@@ -96,6 +96,7 @@
                     </label>
 
                     <button type="submit" class="btn btn-terracotta btn-block">Create Account</button>
+                    <p class="auth-status" id="signupStatus" role="status" aria-live="polite"></p>
 
                     <div class="divider"><span>or</span></div>
 

@@ -407,6 +407,25 @@
     min-height: 0;
 }
 
+.auth-status {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--body);
+    margin: 0;
+}
+
+.auth-status:empty {
+    display: none;
+}
+
+.auth-status.error {
+    color: #b3261e;
+}
+
+.auth-status.success {
+    color: #28734a;
+}
+
 .check-terms {
     align-items: flex-start;
     line-height: 1.4;
