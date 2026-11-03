@@ -6,6 +6,7 @@
         <title>Pilipinas Travel - Home</title>
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/auth.css">
     </head>
     <body>
         <!--Navigation-->
@@ -33,6 +34,11 @@
                 <div class="hero-content">
                     <h1 class="serif">Discover the Beauty <br/> of the Philippines</h1>
                     <p>A modern platform designed to unlock immersive cultural landmarks, hyper-local excursions,<br/> curated itineraries, and seamless booking logistics.</p>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-terracotta" id="heroLogin" type="button">Login</button>
+                        <a href="signup.html" class="btn btn-outline-light">Sign Up</a>
+                    </div>
                 </div>
             </div>
 
@@ -166,5 +172,55 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Login Modal -->
+        <div class="modal-overlay" id="loginModal" aria-hidden="true">
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+                <button class="modal-close" id="closeLogin" type="button" aria-label="Close login">&times;</button>
+
+                <a href="home.html" class="brand modal-brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+
+                <h2 class="serif modal-title" id="loginTitle">Welcome Back</h2>
+                <p class="modal-sub">Log in to continue booking your next Philippine journey.</p>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="field">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="e.g. juan@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-pw" data-target="loginPassword">Show</button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="check">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="text-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-terracotta btn-block">Log In</button>
+
+                    <div class="divider"><span>or</span></div>
+
+                    <button type="button" class="btn btn-google btn-block">
+                        <span class="google-icon">@</span> Continue with Google
+                    </button>
+
+                    <p class="switch-text">Don't have an account? <a href="signup.html" class="text-link">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+
+        <script src="scripts/auth.js"></script>
     </body>
 </html>
