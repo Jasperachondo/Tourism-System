@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pilipinas Travel - Dashboard</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/dashboard.css">
+    </head>
+    <body>
+        <header>
+            <div class="nav-inner dashboard-nav">
+                <a href="home.html" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <nav class="links" aria-label="Main navigation">
+                    <a href="home.html">Home</a>
+                    <a href="destinations.html">Destinations</a>
+                    <a href="experiences.html">Experiences</a>
+                    <a href="itineraries.html">Itineraries</a>
+                    <a href="about.html">About Us</a>
+                </nav>
+                <button class="btn btn-terracotta" id="logoutButton" type="button">Log Out</button>
+            </div>
+        </header>
+
+        <main class="dashboard-page">
+            <section class="dashboard-welcome" aria-labelledby="dashboardTitle">
+                <div class="eyebrow">Account Overview</div>
+                <h1 class="serif" id="dashboardTitle">Loading your dashboard...</h1>
+                <p id="dashboardDescription">Verifying your account and access.</p>
+                <div class="dashboard-account">
+                    <span class="dashboard-avatar" aria-hidden="true">✦</span>
+                    <div>
+                        <strong id="accountName">Loading account</strong>
+                        <span id="accountEmail"></span>
+                    </div>
+                    <span class="role-pill" id="accountRole">Checking role</span>
+                </div>
+                <p class="dashboard-status" id="dashboardStatus" role="status" aria-live="polite">Checking your session...</p>
+            </section>
+
+            <section class="dashboard-content" aria-labelledby="quickLinksTitle">
+                <div class="section-head dashboard-section-head">
+                    <div class="eyebrow">Continue Exploring</div>
+                    <h2 class="serif" id="quickLinksTitle">Your Pilipinas Travel workspace</h2>
+                    <p id="dashboardRoleNote"></p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <a class="dashboard-card" href="destinations.html">
+                        <span class="dashboard-card-number">01</span>
+                        <h3 class="serif">Destinations</h3>
+                        <p>Explore destinations, landmarks, and places across the Philippines.</p>
+                        <span class="dashboard-card-link">Explore destinations →</span>
+                    </a>
+                    <a class="dashboard-card" href="experiences.html">
+                        <span class="dashboard-card-number">02</span>
+                        <h3 class="serif">Experiences</h3>
+                        <p>Discover local activities, tours, and community experiences.</p>
+                        <span class="dashboard-card-link">View experiences →</span>
+                    </a>
+                    <a class="dashboard-card" href="itineraries.html#dashboard">
+                        <span class="dashboard-card-number">03</span>
+                        <h3 class="serif">Trip Planner</h3>
+                        <p>Open the itinerary page and continue planning your trip.</p>
+                        <span class="dashboard-card-link">Open trip planner →</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="dashboard-footer">
+            <span class="serif">Pilipinas Travel</span>
+            <span>Explore thoughtfully. Travel responsibly.</span>
+        </footer>
+
+        <script src="scripts/dashboard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,226 @@
+.dashboard-nav {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.dashboard-page {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 72px 0 88px;
+}
+
+.dashboard-welcome {
+    padding: 44px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.dashboard-welcome h1 {
+    margin-top: 14px;
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 500;
+}
+
+.dashboard-welcome > p:not(.dashboard-status) {
+    max-width: 720px;
+    margin-top: 12px;
+    color: var(--body);
+    line-height: 1.7;
+}
+
+.dashboard-account {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.dashboard-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--tan);
+    color: var(--terracotta);
+    font-size: 22px;
+}
+
+.dashboard-account > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.dashboard-account strong {
+    font-size: 14px;
+}
+
+.dashboard-account #accountEmail {
+    color: var(--body);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.role-pill {
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    color: var(--terracotta-deep);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.dashboard-status {
+    min-height: 18px;
+    margin-top: 18px;
+    color: var(--body);
+    font-size: 13px;
+}
+
+.dashboard-status.error {
+    color: #b3261e;
+}
+
+.dashboard-content {
+    padding-top: 64px;
+}
+
+.dashboard-section-head {
+    display: block;
+    text-align: left;
+}
+
+.dashboard-section-head h2 {
+    margin-top: 10px;
+    font-size: clamp(26px, 3vw, 36px);
+}
+
+.dashboard-section-head p {
+    margin-top: 10px;
+    color: var(--body);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.dashboard-card {
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    transition: transform .15s ease, border-color .15s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--terracotta);
+}
+
+.dashboard-card-number {
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.dashboard-card h3 {
+    margin-top: 18px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.dashboard-card p {
+    margin-top: 9px;
+    color: var(--body);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.dashboard-card-link {
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--terracotta-deep);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dashboard-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 5vw;
+    border-top: 1px solid var(--line);
+    color: var(--body);
+    font-size: 12px;
+}
+
+.dashboard-footer .serif {
+    color: var(--ink);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .dashboard-nav {
+        height: auto;
+        min-height: 76px;
+        flex-wrap: wrap;
+        gap: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .dashboard-nav nav.links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .dashboard-page {
+        width: min(100% - 28px, 1120px);
+        padding: 34px 0 56px;
+    }
+
+    .dashboard-welcome {
+        padding: 25px 20px;
+    }
+
+    .dashboard-account {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .role-pill {
+        margin-left: 58px;
+    }
+
+    .dashboard-footer {
+        flex-direction: column;
+    }
+}

@@ -1,11 +1,39 @@
 -- Authentication routines for database/pilipinastravel.sql (MySQL 8.0+).
 -- Run this after the main schema script has created the tables and seeded roles.
 --
--- The application server must hash passwords with bcrypt or Argon2 before
--- calling sp_register_user, and verify submitted passwords against the hash
--- returned by sp_get_login_credentials. Never send password_hash to a browser.
+-- The API hashes passwords with bcrypt before calling sp_register_user and
+-- verifies submitted passwords against the hash returned by
+-- sp_get_login_credentials. Never send password_hash to a browser.
 
 USE pilipinas_travel;
+
+-- Keep the role catalog current on both fresh and already-existing databases.
+INSERT INTO roles (role_name, description)
+VALUES ('STAFF', 'Tourism operations staff')
+ON DUPLICATE KEY UPDATE description = 'Tourism operations staff';
+
+-- Grant the same operational permissions to STAFF on existing installations.
+INSERT INTO role_permissions (role_id, permission_id)
+SELECT r.role_id, p.permission_id
+  FROM roles r
+  JOIN permissions p ON p.permission_code IN ('CONTENT_MANAGE', 'BOOKING_MANAGE_ALL')
+ WHERE r.role_name = 'STAFF'
+   AND NOT EXISTS (
+       SELECT 1
+         FROM role_permissions rp
+        WHERE rp.role_id = r.role_id
+          AND rp.permission_id = p.permission_id
+   );
+
+-- Existing accounts created before role assignment was enforced are treated as
+-- regular travelers. Explicit ADMIN/STAFF/LOCAL_HOST assignments are preserved.
+INSERT INTO user_roles (user_id, role_id)
+SELECT u.user_id, r.role_id
+  FROM users u
+  JOIN roles r ON r.role_name = 'TRAVELER'
+ WHERE NOT EXISTS (
+       SELECT 1 FROM user_roles ur WHERE ur.user_id = u.user_id
+ );
 
 CREATE TABLE IF NOT EXISTS auth_sessions (
   session_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,

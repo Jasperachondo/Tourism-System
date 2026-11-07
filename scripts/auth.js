@@ -1,4 +1,22 @@
-const AUTH_API_URL = 'http://localhost:3000/api/auth';
+function getAuthApiUrl() {
+    const configuredUrl = document.querySelector('meta[name="auth-api-url"]')?.content.trim();
+    if (configuredUrl) return configuredUrl.replace(/\/+$/, '');
+
+    // Keep the API host aligned with the hostname used to open the frontend.
+    // This avoids localhost/127.0.0.1 cookie and CORS mismatches.
+    const hostname = window.location.hostname || 'localhost';
+    const protocol = window.location.protocol === 'https:' ? 'https:' : 'http:';
+    return `${protocol}//${hostname}:3000/api/auth`;
+}
+
+const AUTH_API_URL = getAuthApiUrl();
+
+const ROLE_DASHBOARD_URLS = {
+    ADMIN: 'dashboard.html#admin',
+    STAFF: 'dashboard.html#staff',
+    LOCAL_HOST: 'dashboard.html#local-host',
+    TRAVELER: 'dashboard.html#traveler'
+};
 
 async function submitAuthRequest(path, values) {
     let response;
@@ -46,6 +64,10 @@ function closeLogin() {
 }
 
 if (loginModal) {
+    if (new URLSearchParams(window.location.search).get('login') === '1') {
+        openLogin();
+    }
+
     ['openLogin', 'heroLogin'].forEach(id => {
         const btn = document.getElementById(id);
         if (btn) btn.addEventListener('click', openLogin);
@@ -79,7 +101,8 @@ if (loginModal) {
                     remember: document.getElementById('remember').checked
                 });
                 document.getElementById('loginPassword').value = '';
-                showAuthStatus(status, result.message, 'success');
+                const destination = ROLE_DASHBOARD_URLS[result.user?.primaryRole] || 'dashboard.html';
+                window.location.assign(destination);
             } catch (error) {
                 showAuthStatus(status, error.message, 'error');
             } finally {
