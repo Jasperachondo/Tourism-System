@@ -622,3 +622,132 @@ button.active {
     color: var(--white);
     background-color: var(--ink);
 }
+
+@media (max-width: 900px) {
+    .hero,
+    .directory,
+    .stay-eat,
+    .section-tan-bg {
+        padding: 56px 24px;
+    }
+
+    .filter {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .filter-section {
+        flex: 1 1 220px;
+        min-width: 0;
+    }
+
+    .filter-section input {
+        width: 100%;
+    }
+
+    .filter > button {
+        width: 100%;
+    }
+
+    .card {
+        flex-wrap: wrap;
+    }
+
+    .card-content {
+        width: 47%;
+    }
+
+    .card-button,
+    .filter-card-button {
+        width: 100%;
+    }
+
+    .card2 {
+        flex-wrap: wrap;
+    }
+
+    .card-content2 {
+        width: 47%;
+    }
+
+    .filter-choices {
+        flex-wrap: wrap;
+    }
+
+    .stay-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero,
+    .directory,
+    .stay-eat,
+    .section-tan-bg {
+        padding: 44px 18px;
+    }
+
+    .filter-card-wrapper {
+        gap: 20px;
+        padding: 24px 16px 48px;
+    }
+
+    .filter-card {
+        width: 100%;
+    }
+
+    .filter-card .card {
+        padding: 20px;
+    }
+
+    .filter-details {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .card-content,
+    .card-content2 {
+        width: 100%;
+    }
+
+    .card-content {
+        padding: 24px;
+    }
+
+    .card-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .card-header h3 {
+        width: auto;
+        font-size: 23px;
+    }
+
+    .card-button {
+        width: 100%;
+    }
+
+    .filter-choices {
+        gap: 8px;
+    }
+
+    .filter-choices button {
+        flex: 1 1 140px;
+        width: auto;
+        padding: 0 8px;
+    }
+
+    .stay-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stay-select {
+        width: 100%;
+    }
+
+    .stay-body {
+        padding: 22px;
+    }
+}

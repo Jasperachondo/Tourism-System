@@ -115,3 +115,87 @@
 .trip {
     padding: 80px 80px 80px;
 }
+
+@media (max-width: 900px) {
+    .hero-container img {
+        height: 560px;
+    }
+
+    .hero-content {
+        padding: 24px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .philosophy {
+        padding: 56px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .philosophy p {
+        max-width: none;
+    }
+
+    .section-tan-bg,
+    .tours,
+    .trip {
+        padding: 56px 24px;
+    }
+
+    .card {
+        flex-wrap: wrap;
+    }
+
+    .card-content {
+        width: 47%;
+        padding: 24px;
+    }
+
+    .card-content img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-container img {
+        height: 440px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-content br,
+    .philosophy br,
+    .card-content br {
+        display: none;
+    }
+
+    .philosophy,
+    .section-tan-bg,
+    .tours,
+    .trip {
+        padding: 44px 18px;
+    }
+
+    .card-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card-content img {
+        height: 200px;
+    }
+
+    .section-head {
+        margin-bottom: 28px;
+    }
+}

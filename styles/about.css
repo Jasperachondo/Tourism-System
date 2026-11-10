@@ -311,3 +311,40 @@
         gap: 16px;
     }
 }
+
+@media (max-width: 600px) {
+    .about-hero img {
+        height: 300px;
+    }
+
+    .about-hero-content {
+        padding: 20px;
+    }
+
+    .story,
+    .section-tan-bg,
+    .values,
+    .tagline {
+        padding: 44px 18px;
+    }
+
+    .story img {
+        height: 240px;
+    }
+
+    .direction-cards {
+        gap: 18px;
+    }
+
+    .info-card {
+        padding: 24px;
+    }
+
+    .contact-card {
+        padding: 4px 16px;
+    }
+
+    .contact-row {
+        padding: 18px 0;
+    }
+}
