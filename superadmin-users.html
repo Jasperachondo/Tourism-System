@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Users &amp; Admins - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="superadmin" data-page="users" data-crumb="Users &amp; admins">
+        <aside class="sidebar">
+            <div>
+                <a href="superadmin-overview.html" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <div class="tagline">Tourism Management</div>
+            </div>
+            <div>
+                <div class="side-label">System workspace</div>
+                <nav class="side-nav">
+                    <a href="superadmin-overview.html"><span class="ico" aria-hidden="true">▦</span>Overview</a>
+                    <a href="admin-content.html"><span class="ico" aria-hidden="true">⚲</span>Content management</a>
+                    <a href="admin-bookings.html"><span class="ico" aria-hidden="true">▤</span>Bookings &amp; inquiries</a>
+                    <a href="superadmin-users.html" class="active"><span class="ico" aria-hidden="true">♙</span>Users &amp; admins</a>
+                </nav>
+            </div>
+            <div class="access-box">
+                <strong>Superadmin access</strong>
+                <p>Oversee tourism content, accounts, and role administration.</p>
+            </div>
+            <div class="side-bottom">
+                <a href="home.html" class="view-site"><span aria-hidden="true">↗</span>View travel website</a>
+                <div class="side-user">
+                    <span class="avatar">RS</span>
+                    <div class="who">Rafael Santos<small>Superadmin</small></div>
+                    <a href="home.html" aria-label="Log out">⇥</a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <div class="topbar">
+                <div class="top-right">
+                    <div class="crumbs">Superadmin <span class="sep">/</span> <b>Users &amp; admins</b></div>
+                </div>
+                <div class="top-right">
+                    <span data-today></span>
+                    <span aria-label="Notifications">♧</span>
+                    <span class="role-pill">Superadmin</span>
+                </div>
+            </div>
+
+            <main class="content">
+                <div class="page-head">
+                    <div>
+                        <div class="eyebrow small">Superadmin / Account administration</div>
+                        <h1 class="serif">Users &amp; admins</h1>
+                        <p>Carefully manage who can travel, curate, and administer the system.</p>
+                        <div class="pill-row account-summary">
+                            <span class="badge plain"><span class="ico" aria-hidden="true">♙</span><span data-stat="accounts">1,248</span> accounts</span>
+                            <span class="badge plain"><span class="ico" aria-hidden="true">♧</span><span data-stat="users">1,234</span> users</span>
+                            <span class="badge"><span class="ico" aria-hidden="true">♟</span><span data-stat="admins">12</span> admins</span>
+                            <span class="badge amber"><span class="ico" aria-hidden="true">◇</span><span data-stat="superadmins">2</span> superadmins</span>
+                            <span class="badge red"><span class="ico" aria-hidden="true">⊘</span><span data-stat="deactivated">18</span> deactivated</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-terracotta" id="createAdminTop" type="button"><span aria-hidden="true">＋</span>Create admin</button>
+                </div>
+
+                <section class="panel table-card">
+                    <div class="toolbar">
+                        <label class="search">
+                            <input type="search" id="searchInput" placeholder="Search name or email address..." autocomplete="off">
+                        </label>
+                        <div class="filters">
+                            <select id="roleFilter" aria-label="Filter by role">
+                                <option value="all">All roles</option>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                                <option value="superadmin">Superadmin</option>
+                            </select>
+                            <select id="statusFilter" aria-label="Filter by status">
+                                <option value="all">All statuses</option>
+                                <option value="active">Active</option>
+                                <option value="deactivated">Deactivated</option>
+                                <option value="invited">Invited</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="data">
+                            <thead>
+                                <tr><th>Account</th><th>Role</th><th>Status</th><th>Last active</th><th>Actions</th></tr>
+                            </thead>
+                            <tbody id="usersBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="table-foot">
+                        <span id="showingInfo">Showing accounts</span>
+                        <div class="pager" id="pager"></div>
+                    </div>
+                </section>
+
+                <div class="two-col even account-tools">
+                    <section class="panel" id="changeRoleCard">
+                        <div class="panel-head"><h2 class="serif">Change role</h2></div>
+                        <div class="row-item selected-account">
+                            <div>
+                                <b id="crName">Luis Mendoza</b>
+                                <small id="crEmail">luis@pilipinastravel.ph</small>
+                            </div>
+                            <span class="badge" id="crCurrent">Current: admin</span>
+                        </div>
+
+                        <div class="field">
+                            <label for="crSelect">New role</label>
+                            <select id="crSelect">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                                <option value="superadmin">Superadmin</option>
+                            </select>
+                        </div>
+                            <div class="role-chips" id="roleChips" aria-label="Choose a role">
+                            <button type="button" class="badge plain" data-role="user">♧ User</button>
+                            <button type="button" class="badge" data-role="admin">♟ Admin</button>
+                            <button type="button" class="badge amber" data-role="superadmin">◇ Superadmin</button>
+                        </div>
+                        <p class="role-message" id="crMsg">Choose a new role to review the change.</p>
+
+                        <div class="form-bar">
+                            <button type="button" class="link-btn danger" id="crDeactivate">Deactivate account</button>
+                            <button type="button" class="btn btn-light btn-sm" id="crApply" disabled>Apply role change</button>
+                        </div>
+                    </section>
+
+                    <form class="panel" id="createForm" novalidate>
+                        <div class="panel-head">
+                            <h2 class="serif">Create admin</h2>
+                            <span class="badge plain">New account</span>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="cFirst">First name *</label>
+                                <input type="text" id="cFirst" placeholder="Isabel" autocomplete="off">
+                                <small class="error" id="errFirst"></small>
+                            </div>
+                            <div class="field">
+                                <label for="cLast">Last name *</label>
+                                <input type="text" id="cLast" placeholder="Cruz" autocomplete="off">
+                                <small class="error" id="errLast"></small>
+                            </div>
+                            <div class="field full">
+                                <label for="cEmail">Email address *</label>
+                                <input type="email" id="cEmail" placeholder="isabel@pilipinastravel.ph" autocomplete="off">
+                                <small class="error" id="errEmail"></small>
+                            </div>
+                        </div>
+                        <div class="assigned">
+                            <span>Assigned role</span>
+                            <span class="badge">♟ Admin</span>
+                        </div>
+                        <p class="sub">Send an account-setup invitation. This account will not be included in totals until created.</p>
+                        <div class="form-bar">
+                            <button type="button" class="btn btn-light btn-sm" id="cancelCreate">Cancel</button>
+                            <button type="submit" class="btn btn-terracotta btn-sm">＋ Create admin &amp; invite</button>
+                        </div>
+                    </form>
+                </div>
+
+                <section class="notice warn">
+                    Deactivation requires confirmation and should revoke active sessions. Keep at least one active superadmin; prevent self-deactivation and removal of the last superadmin.
+                </section>
+            </main>
+
+            <footer class="admin-foot">
+                <span>Pilipinas Travel · Tourism management</span>
+                <span>Wander intentionally. Support sustainably.</span>
+            </footer>
+        </div>
+
+        <div class="modal-overlay" id="confirmModal" aria-hidden="true">
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+                <h3 class="serif" id="confirmTitle">Are you sure?</h3>
+                <p id="confirmText"></p>
+                <div class="btns">
+                    <button type="button" class="btn btn-light btn-sm" id="confirmCancel">Cancel</button>
+                    <button type="button" class="btn btn-danger btn-sm" id="confirmOk">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <script src="scripts/superadmin.js"></script>
+    </body>
+</html>

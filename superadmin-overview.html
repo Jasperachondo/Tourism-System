@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Superadmin Overview - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="superadmin" data-page="overview" data-crumb="Overview">
+        <aside class="sidebar">
+            <div>
+                <a href="superadmin-overview.html" class="brand">
+                    <span class="brand-mark">✦</span>
+                    <span class="serif">Pilipinas Travel</span>
+                </a>
+                <div class="tagline">Tourism Management</div>
+            </div>
+            <div>
+                <div class="side-label">System workspace</div>
+                <nav class="side-nav">
+                    <a href="superadmin-overview.html" class="active"><span class="ico" aria-hidden="true">▦</span>Overview</a>
+                    <a href="admin-content.html"><span class="ico" aria-hidden="true">⚲</span>Content management</a>
+                    <a href="admin-bookings.html"><span class="ico" aria-hidden="true">▤</span>Bookings &amp; inquiries</a>
+                    <a href="superadmin-users.html"><span class="ico" aria-hidden="true">♙</span>Users &amp; admins</a>
+                </nav>
+            </div>
+            <div class="access-box">
+                <strong>Superadmin access</strong>
+                <p>Oversee tourism content, accounts, and role administration.</p>
+            </div>
+            <div class="side-bottom">
+                <a href="home.html" class="view-site"><span aria-hidden="true">↗</span>View travel website</a>
+                <div class="side-user">
+                    <span class="avatar">RS</span>
+                    <div class="who">Rafael Santos<small>Superadmin</small></div>
+                    <a href="home.html" aria-label="Log out">⇥</a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <div class="topbar">
+                <div class="top-right">
+                    <div class="crumbs">Superadmin <span class="sep">/</span> <b>Overview</b></div>
+                </div>
+                <div class="top-right">
+                    <span data-today></span>
+                    <span aria-label="Notifications">♧</span>
+                    <span class="role-pill">Superadmin</span>
+                </div>
+            </div>
+
+            <main class="content">
+                <div class="page-head">
+                    <div>
+                        <div class="eyebrow small">System oversight</div>
+                        <h1 class="serif">A thoughtful system. A trusted team.</h1>
+                        <p>Welcome back, Rafael. Oversee the people and places behind Pilipinas Travel.</p>
+                    </div>
+                    <a href="superadmin-users.html" class="btn btn-terracotta"><span aria-hidden="true">♙</span>Manage users</a>
+                </div>
+
+                <section class="banner slim">
+                    <span class="shield" aria-hidden="true">◇</span>
+                    <div>
+                        <h3>Superadmin workspace</h3>
+                        <p>Tourism content and reservations, plus account access and role administration.</p>
+                    </div>
+                    <span class="badge">System-wide view</span>
+                </section>
+
+                <section class="stat-grid" aria-label="System summary">
+                    <div class="stat">
+                        <div class="top">Total accounts <span class="ico" aria-hidden="true">♙</span></div>
+                        <div class="num serif">1,248</div>
+                        <div class="note">1,230 active · 18 deactivated</div>
+                    </div>
+                    <div class="stat">
+                        <div class="top">Admins <span class="ico" aria-hidden="true">♟</span></div>
+                        <div class="num serif">12</div>
+                        <div class="note">Tourism management team</div>
+                    </div>
+                    <div class="stat">
+                        <div class="top">Superadmins <span class="ico" aria-hidden="true">◇</span></div>
+                        <div class="num serif">2</div>
+                        <div class="note">System &amp; role administration</div>
+                    </div>
+                    <div class="stat">
+                        <div class="top">Content items <span class="ico" aria-hidden="true">⚲</span></div>
+                        <div class="num serif">54</div>
+                        <div class="note">48 published · 6 drafts</div>
+                    </div>
+                </section>
+
+                <div class="two-col">
+                    <div class="grow">
+                        <section class="panel">
+                            <div class="panel-head">
+                                <h2 class="serif">People &amp; permissions</h2>
+                                <a href="superadmin-users.html" class="link-btn">Users &amp; admins →</a>
+                            </div>
+                            <p class="sub">1,248 accounts across three clearly defined roles.</p>
+                            <div class="role-bar" id="roleBar" aria-hidden="true">
+                                <span class="u" data-count="1234"></span>
+                                <span class="a" data-count="12"></span>
+                                <span class="s" data-count="2"></span>
+                            </div>
+                            <div class="role-list">
+                                <div class="r"><span class="badge plain">user</span><b>1,234</b><span class="d">Home &amp; travel planning</span></div>
+                                <div class="r"><span class="badge">admin</span><b>12</b><span class="d">Content, bookings &amp; inquiries</span></div>
+                                <div class="r"><span class="badge amber">superadmin</span><b>2</b><span class="d">All management &amp; role administration</span></div>
+                            </div>
+                        </section>
+
+                        <section class="panel operations-panel">
+                            <div class="panel-head">
+                                <h2 class="serif">Tourism operations</h2>
+                                <a href="admin-bookings.html" class="link-btn">Open bookings →</a>
+                            </div>
+                            <div class="two-col even">
+                                <div class="ops-stat"><strong class="serif">128</strong><span>Reservations</span><small>26 pending confirmation</small></div>
+                                <div class="ops-stat"><strong class="serif">14</strong><span>Guest inquiries</span><small>8 new · 6 replied</small></div>
+                                <div class="ops-stat"><strong class="serif">6</strong><span>Content drafts</span><small>Across all content types</small></div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section class="panel side-card">
+                        <div class="panel-head"><h2 class="serif">Recent system activity</h2></div>
+                        <p class="sub">Account and content changes across the workspace.</p>
+                        <div class="activity">
+                            <div class="item"><span class="tick" aria-hidden="true">✓</span><div class="txt"><b>Fort Santiago updated</b><small>Maria Reyes · Destination DST-001</small></div><time>09:42</time></div>
+                            <div class="item"><span class="tick" aria-hidden="true">✓</span><div class="txt"><b>Reservation confirmed</b><small>Maria Reyes · PT-1027</small></div><time>09:18</time></div>
+                            <div class="item"><span class="tick" aria-hidden="true">✓</span><div class="txt"><b>Cafe Agapita published</b><small>Luis Mendoza · Eatery</small></div><time>08:55</time></div>
+                            <div class="item"><span class="tick" aria-hidden="true">✓</span><div class="txt"><b>Carlo Villanueva deactivated</b><small>Rafael Santos · Account access</small></div><time>03 Nov</time></div>
+                            <div class="item"><span class="tick" aria-hidden="true">✓</span><div class="txt"><b>Luis Mendoza assigned admin</b><small>Rafael Santos · user → admin</small></div><time>03 Nov</time></div>
+                        </div>
+                        <a href="superadmin-users.html" class="link-btn">Review users &amp; admins →</a>
+                    </section>
+                </div>
+
+                <section class="banner slim directory">
+                    <div>
+                        <h2 class="serif">One connected local directory</h2>
+                        <p>24 destinations · 18 stays · 12 eateries</p>
+                    </div>
+                    <a href="admin-content.html" class="btn btn-light"><span aria-hidden="true">⚲</span>Manage content</a>
+                </section>
+            </main>
+
+            <footer class="admin-foot">
+                <span>Pilipinas Travel · Tourism management</span>
+                <span>Wander intentionally. Support sustainably.</span>
+            </footer>
+        </div>
+        <script src="scripts/superadmin.js"></script>
+    </body>
+</html>
