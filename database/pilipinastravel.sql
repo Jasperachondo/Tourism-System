@@ -1142,7 +1142,8 @@ SELECT p.pass_id,
 INSERT INTO roles (role_id, role_name, description) VALUES
   (1, 'ADMIN',      'Platform administrator'),
   (2, 'TRAVELER',   'Registered traveler'),
-  (3, 'LOCAL_HOST', 'Verified local tour host');
+  (3, 'LOCAL_HOST', 'Verified local tour host'),
+  (4, 'STAFF',      'Tourism operations staff');
 
 INSERT INTO permissions (permission_id, permission_code, description) VALUES
   (1, 'USER_MANAGE',            'Manage user accounts and roles'),
@@ -1158,7 +1159,8 @@ SELECT r.role_id, p.permission_id
   FROM roles r CROSS JOIN permissions p
  WHERE r.role_name = 'ADMIN'
     OR (r.role_name = 'TRAVELER'   AND p.permission_code IN ('TRIP_MANAGE_OWN','BOOKING_CREATE','REVIEW_CREATE'))
-    OR (r.role_name = 'LOCAL_HOST' AND p.permission_code IN ('TRIP_MANAGE_OWN','BOOKING_CREATE','REVIEW_CREATE','EXPERIENCE_MANAGE_OWN'));
+    OR (r.role_name = 'LOCAL_HOST' AND p.permission_code IN ('TRIP_MANAGE_OWN','BOOKING_CREATE','REVIEW_CREATE','EXPERIENCE_MANAGE_OWN'))
+    OR (r.role_name = 'STAFF'      AND p.permission_code IN ('CONTENT_MANAGE','BOOKING_MANAGE_ALL'));
 
 -- Currencies (PHP everywhere; USD because the Coron route fare is shown as "$499")
 INSERT INTO currencies (currency_code, currency_name, symbol) VALUES

@@ -62,6 +62,28 @@ function getString(value, maxLength) {
     return trimmed.length > 0 && trimmed.length <= maxLength ? trimmed : null;
 }
 
+const ROLE_PRIORITY = ['ADMIN', 'STAFF', 'LOCAL_HOST', 'TRAVELER'];
+
+async function getUserRoles(executor, userId) {
+    const [rows] = await executor.execute(
+        `SELECT r.role_name
+           FROM user_roles ur
+           JOIN roles r ON r.role_id = ur.role_id
+          WHERE ur.user_id = ?`,
+        [userId]
+    );
+
+    const roles = rows.map(row => String(row.role_name).toUpperCase());
+    return [
+        ...ROLE_PRIORITY.filter(role => roles.includes(role)),
+        ...roles.filter(role => !ROLE_PRIORITY.includes(role)).sort()
+    ];
+}
+
+function getPrimaryRole(roles) {
+    return ROLE_PRIORITY.find(role => roles.includes(role)) || roles[0] || null;
+}
+
 function getSessionToken(req) {
     const cookieHeader = req.headers.cookie || '';
     const cookie = cookieHeader.split(';').map(part => part.trim())
@@ -183,7 +205,12 @@ app.post('/api/auth/login', async (req, res, next) => {
             return res.status(401).json({ message: 'Email or password is incorrect, or the account is temporarily locked.' });
         }
 
-        const passwordMatches = await bcrypt.compare(password, user.password_hash);
+        const hasBcryptHash = typeof user.password_hash === 'string'
+            && /^\$2[aby]\$\d\d\$/.test(user.password_hash);
+        const passwordMatches = hasBcryptHash
+            ? await bcrypt.compare(password, user.password_hash)
+            : false;
+
         if (!passwordMatches || user.account_status !== 'ACTIVE') {
             const failedAttempts = Math.min(Number(user.failed_login_attempts) + 1, 255);
             await connection.execute(
@@ -195,6 +222,15 @@ app.post('/api/auth/login', async (req, res, next) => {
             );
             await connection.commit();
             return res.status(401).json({ message: 'Email or password is incorrect, or the account is temporarily locked.' });
+        }
+
+        const roles = await getUserRoles(connection, user.user_id);
+        const primaryRole = getPrimaryRole(roles);
+        if (!primaryRole) {
+            await connection.rollback();
+            return res.status(403).json({
+                message: 'This account has no assigned role. Ask an administrator to assign a role before logging in.'
+            });
         }
 
         await connection.execute(
@@ -213,7 +249,9 @@ app.post('/api/auth/login', async (req, res, next) => {
             user: {
                 id: user.user_id,
                 firstName: user.first_name,
-                lastName: user.last_name
+                lastName: user.last_name,
+                roles,
+                primaryRole
             }
         });
     } catch (error) {
@@ -246,12 +284,21 @@ app.get('/api/auth/me', async (req, res, next) => {
             [hashToken(token)]
         );
         if (!users[0]) return res.status(401).json({ message: 'Session expired. Please log in again.' });
+
+        const roles = await getUserRoles(pool, users[0].user_id);
+        const primaryRole = getPrimaryRole(roles);
+        if (!primaryRole) {
+            return res.status(403).json({ message: 'This account has no assigned role. Contact an administrator.' });
+        }
+
         res.json({
             user: {
                 id: users[0].user_id,
                 email: users[0].email,
                 firstName: users[0].first_name,
-                lastName: users[0].last_name
+                lastName: users[0].last_name,
+                roles,
+                primaryRole
             }
         });
     } catch (error) {
@@ -280,6 +327,11 @@ app.use((error, req, res, next) => {
     if (res.headersSent) return next(error);
     if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
         return res.status(400).json({ message: 'Request body must be valid JSON.' });
+    }
+    if (['ER_SP_DOES_NOT_EXIST', 'ER_NO_SUCH_TABLE', 'ER_BAD_FIELD_ERROR'].includes(error.code)) {
+        return res.status(503).json({
+            message: 'The authentication database is not fully installed or does not match this application. Run database/pilipinastravel.sql first, then database/authentication.sql.'
+        });
     }
     res.status(500).json({ message: 'The server could not complete the request. Please try again.' });
 });
