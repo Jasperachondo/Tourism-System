@@ -266,14 +266,23 @@ footer {
     white-space: nowrap;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .nav-inner {
         padding: 0 24px;
         gap: 20px;
         flex-wrap: wrap;
+        justify-content: space-between;
         height: auto;
         padding-top: 16px;
         padding-bottom: 16px;
+    }
+
+    nav.links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
     }
 
     .hero {
@@ -306,5 +315,49 @@ footer {
 
     .side-card {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-inner {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .brand .serif {
+        font-size: 22px;
+    }
+
+    nav.links {
+        gap: 10px 16px;
+    }
+
+    nav.links a {
+        font-size: 12px;
+    }
+
+    .nav-inner > .btn {
+        height: 42px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+
+    footer {
+        padding: 44px 20px 28px;
+        gap: 36px;
+    }
+
+    .footer-top {
+        gap: 32px;
+    }
+
+    .footer-brand h3 {
+        font-size: 30px;
+    }
+
+    .footer-bottom,
+    .footer-bottom .legal {
+        flex-direction: column;
+        gap: 12px;
     }
 }

@@ -330,7 +330,7 @@
     }
 
     nav.links {
-        display: none;
+        flex-wrap: wrap;
     }
 
     .expeditions-layout {
@@ -378,5 +378,39 @@
 
     .btn-save {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .categories {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .cat-btn {
+        padding: 9px 12px;
+    }
+
+    .grid {
+        gap: 20px;
+        padding-bottom: 48px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .expeditions-section {
+        padding: 48px 0;
+    }
+
+    .itinerary-card {
+        padding: 18px;
     }
 }

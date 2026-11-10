@@ -454,8 +454,57 @@ section {
         flex-direction: column;
     }
 
-    .poi-card {
+    .poiToggle {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero,
+    section {
+        padding: 44px 18px;
+    }
+
+    .map-card {
+        height: 360px;
+    }
+
+    .poiToggle {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .transit-grid,
+    .adv-grid {
+        gap: 16px;
+    }
+
+    .transit-card,
+    .adv-card,
+    .side-card {
+        padding: 20px;
+    }
+
+    .dash-head {
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .dash-head h2 {
+        font-size: 30px;
+    }
+
+    .itinerary-card {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .day-tabs-header {
+        flex-wrap: wrap;
+    }
+
+    .day-slot .time {
+        width: 64px;
     }
 }
 
