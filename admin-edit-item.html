@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edit Destination - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="admin" data-page="content" data-crumb="Content management">
+        <main>
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow small">Content management / DST-001</div>
+                    <h1 class="serif">Edit Fort Santiago</h1>
+                    <p>Keep this destination's visitor information useful and up to date.</p>
+                </div>
+                <a href="admin-content.html" class="btn btn-light btn-sm">← &nbsp;Back to content</a>
+            </div>
+
+            <div class="meta-bar"><span class="badge">Destination</span><span class="badge green">Published</span><span>DST-001 · Last updated 04 Nov 2026, 09:42 by Maria Reyes</span><a href="home.html" class="push">View public listing ↗</a></div>
+
+            <form id="itemForm" data-validate data-mode="edit" novalidate>
+                <div class="form-layout">
+                    <div class="form-main">
+                        <section class="panel">
+                            <h2 class="form-title serif">The essentials</h2>
+                            <div class="form-grid">
+                                <div class="field"><label>Item type *</label><select disabled><option>Destination</option></select></div>
+                                <div class="field"><label for="itemName">Destination name *</label><input id="itemName" data-locked="1" required value="Fort Santiago"></div>
+                                <div class="field"><label for="itemCategory">Category *</label><select id="itemCategory" data-locked="1" required><option selected>Cultural Sites</option><option>Natural Parks</option><option>Historic Landmarks</option></select></div>
+                                <div class="field"><label for="region">Region *</label><select id="region" required><option selected>Metro Manila</option><option>Calabarzon</option><option>Palawan</option><option>Ilocos Region</option></select></div>
+                                <div class="field"><label for="city">City / municipality *</label><input id="city" required value="Intramuros, Manila"></div>
+                                <div class="field"><label for="street">Street address *</label><input id="street" required value="Santa Clara Street, Intramuros"></div>
+                                <div class="field full"><label for="desc">Description *</label><textarea id="desc" required>Explore the heritage of Fort Santiago, a historic citadel in Intramuros. Discover preserved grounds, cultural stories, and quiet paths through Manila's walled city.</textarea></div>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <h2 class="form-title serif">Visitor information</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="hours">Opening hours *</label><input id="hours" required value="08:30 - 17:00"></div>
+                                <div class="field"><label for="adm">Admission *</label><input id="adm" required value="Free Admission"></div>
+                                <div class="field full"><label for="acc">Accessibility information</label><input id="acc" value="Ramped Paths"></div>
+                                <div class="field full"><label for="vnotes">Visitor notes</label><input id="vnotes" value="Wear comfortable walking shoes and respect heritage areas."></div>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <h2 class="form-title serif">Contact information</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="email">Email address</label><input id="email" type="email" value="fort.santiago@example.com"></div>
+                                <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" value="+63 2 8527 3155"></div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <aside class="form-side">
+                        <section class="panel">
+                            <h2 class="form-title serif">Publishing</h2>
+                            <div class="field" style="margin-top:22px"><label for="visibility">Visibility</label>
+                                <select id="visibility"><option selected>Published</option><option>Draft</option></select></div>
+                            <p class="sub" id="visHint" style="font-size:12px;margin:18px 0 14px">Changes will appear on the travel website when you save them.</p>
+                            <small class="sub" style="font-size:11px">Created 12 Oct 2026 · Maria Reyes</small>
+                        </section>
+                        <section class="panel">
+                            <h2 class="form-title serif">Cover image</h2>
+                            <img class="cover-preview" id="coverPreview" src="img/fort-santiago.jpg" alt="Heritage pavilion surrounded by trees">
+                            <div class="cover-meta"><span>fort-santiago-cover.jpg</span><a href="#" class="link-btn" id="replaceImg" style="font-size:11px">Replace</a></div>
+                            <input type="file" id="coverFile" accept="image/jpeg,image/png" hidden>
+                            <div class="field"><label for="alt">Alt text</label><input id="alt" value="Heritage pavilion surrounded by trees"></div>
+                            <p class="sub" style="font-size:11px;margin-top:16px">Current image from the existing destination listing.</p>
+                        </section>
+                        <div class="danger-box">
+                            <b>Remove this destination</b>
+                            <span>Delete only if the listing is no longer needed. A confirmation is required.</span>
+                            <button type="button" class="btn btn-light btn-sm btn-danger-link" style="align-self:flex-start" data-delete="Fort Santiago" data-redirect="admin-content.html">🗑&nbsp; Delete item</button>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="form-bar" style="margin-top:22px">
+                    <span id="saveStatus">Editing published destination · DST-001</span>
+                    <div class="btns">
+                        <button type="button" class="btn btn-light btn-sm" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-terracotta btn-sm">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        
+        <script src="scripts/admin.js"></script>
+        <script>
+            // Edit page: "Replace" cover image
+            document.getElementById('replaceImg').addEventListener('click', e => { e.preventDefault(); document.getElementById('coverFile').click(); });
+            document.getElementById('coverFile').addEventListener('change', function () {
+                const f = this.files[0]; if (!f) return;
+                if (!/image\/(jpeg|png)/.test(f.type) || f.size > 5 * 1024 * 1024) { showToast('Use a JPG or PNG up to 5 MB'); this.value = ''; return; }
+                document.getElementById('coverPreview').src = URL.createObjectURL(f);
+            });
+        </script>
+    </body>
+</html>

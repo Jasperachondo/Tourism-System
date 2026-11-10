@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Content Management - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="admin" data-page="content" data-crumb="Content management">
+        <main>
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow small">Destination discovery &amp; local directory</div>
+                    <h1 class="serif">Content management</h1>
+                    <p>Keep every destination, stay, and eatery accurate and welcoming.</p>
+                </div>
+                <a href="admin-add-item.html" class="btn btn-terracotta">＋&nbsp; Add item</a>
+            </div>
+
+            <div class="tabs" data-tabs>
+                <button class="active" data-tab="destinations">Destinations <span class="count">24</span></button>
+                <button data-tab="stays">Stays <span class="count">18</span></button>
+                <button data-tab="eateries">Eateries <span class="count">12</span></button>
+            </div>
+
+            <!-- Destinations -->
+            <section class="panel tab-panel active" data-panel="destinations">
+                <div class="toolbar">
+                    <div class="search"><input type="search" placeholder="Search destinations..." data-filter-for="destTable" aria-label="Search destinations"></div>
+                    <div class="filters">
+                        <select data-filter-for="destTable" data-key="category" aria-label="Category">
+                            <option value="">All categories</option><option>Cultural Sites</option><option>Natural Parks</option><option>Historic Landmarks</option>
+                        </select>
+                        <select data-filter-for="destTable" data-key="status" aria-label="Status">
+                            <option value="">All statuses</option><option>Published</option><option>Draft</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                <table class="data" id="destTable" data-filterable>
+                    <thead><tr><th>Destination</th><th>Category / Location</th><th>Admission</th><th>Status</th><th>Updated</th><th>Actions</th></tr></thead>
+                    <tbody>
+                        <tr data-category="Cultural Sites" data-status="Published">
+                            <td><div class="thumb-cell"><img src="img/fort-santiago.jpg" alt=""><div><b>Fort Santiago</b><small>DST-001</small></div></div></td>
+                            <td><b>Cultural Sites</b><br><small>Intramuros, Manila</small></td><td>Free Admission</td>
+                            <td><span class="badge green">Published</span></td><td>04 Nov 2026</td>
+                            <td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="Fort Santiago">Delete</a></div></td>
+                        </tr>
+                        <tr data-category="Natural Parks" data-status="Published">
+                            <td><div class="thumb-cell"><img src="img/puerto-princesa.jpg" alt=""><div><b>Puerto Princesa Subterranean River</b><small>DST-002</small></div></div></td>
+                            <td><b>Natural Parks</b><br><small>Puerto Princesa, Palawan</small></td><td>₱50 Ecosystem Fee</td>
+                            <td><span class="badge green">Published</span></td><td>03 Nov 2026</td>
+                            <td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="Puerto Princesa Subterranean River">Delete</a></div></td>
+                        </tr>
+                        <tr data-category="Historic Landmarks" data-status="Draft">
+                            <td><div class="thumb-cell"><img src="img/vigan.jpg" alt=""><div><b>Historic City of Vigan</b><small>DST-003</small></div></div></td>
+                            <td><b>Historic Landmarks</b><br><small>Vigan, Ilocos Sur</small></td><td>Free admission</td>
+                            <td><span class="badge amber">Draft</span></td><td>02 Nov 2026</td>
+                            <td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="Historic City of Vigan">Delete</a></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <p id="destTable-empty" class="sub" hidden style="padding:20px 0">No destinations match your filters.</p>
+                <div class="table-foot">
+                    <span>Showing 1–<span id="destTable-count">3</span> of 24 destinations</span>
+                    <div class="pager"><button>Previous</button><button class="current">1</button><button>Next</button></div>
+                </div>
+            </section>
+
+            <!-- Stays -->
+            <section class="panel tab-panel" data-panel="stays">
+                <div class="toolbar"><div class="search"><input type="search" placeholder="Search stays..." data-filter-for="stayTable" aria-label="Search stays"></div></div>
+                <div class="table-wrap"><table class="data" id="stayTable" data-filterable>
+                    <thead><tr><th>Stay</th><th>Category / Location</th><th>Rate</th><th>Status</th><th>Actions</th></tr></thead>
+                    <tbody>
+                        <tr><td><div class="thumb-cell"><img src="img/farm.jpg" alt=""><div><b>The Farm at San Benito</b><small>STY-001</small></div></div></td><td>Eco Stays &amp; Hotels<br><small>Lipa, Batangas</small></td><td>₱4,500 / night</td><td><span class="badge green">Published</span></td><td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="The Farm at San Benito">Delete</a></div></td></tr>
+                        <tr><td><div class="thumb-cell"><img src="img/villa.jpg" alt=""><div><b>The Beach Villa</b><small>STY-002</small></div></div></td><td>Villa<br><small>Binangonan, Rizal</small></td><td>₱6,200 / night</td><td><span class="badge green">Published</span></td><td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="The Beach Villa">Delete</a></div></td></tr>
+                    </tbody>
+                </table></div>
+            </section>
+
+            <!-- Eateries -->
+            <section class="panel tab-panel" data-panel="eateries">
+                <div class="toolbar"><div class="search"><input type="search" placeholder="Search eateries..." data-filter-for="eatTable" aria-label="Search eateries"></div></div>
+                <div class="table-wrap"><table class="data" id="eatTable" data-filterable>
+                    <thead><tr><th>Eatery</th><th>Category / Location</th><th>Price range</th><th>Status</th><th>Actions</th></tr></thead>
+                    <tbody>
+                        <tr><td><div class="thumb-cell"><img src="img/cafe.jpg" alt=""><div><b>Cafe Agapita</b><small>EAT-001</small></div></div></td><td>Restaurants &amp; Cafes<br><small>Silang, Cavite</small></td><td>₱₱</td><td><span class="badge green">Published</span></td><td><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="Cafe Agapita">Delete</a></div></td></tr>
+                    </tbody>
+                </table></div>
+            </section>
+
+            <h2 class="serif sub-heading">From the stay &amp; eat directory</h2>
+            <div class="two-col even">
+                <section class="panel list-card">
+                    <div class="panel-head"><h2 class="serif">Stays</h2><a href="#" data-toast="Opening all 18 stays…" class="link-btn">View 18 stays →</a></div>
+                    <div class="item"><img src="img/farm.jpg" alt=""><div class="info"><b>The Farm at San Benito</b><small>Lipa, Batangas · Eco Stays &amp; Hotels</small><span class="badge green">Published</span></div><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="The Farm at San Benito">Delete</a></div></div>
+                    <div class="item"><img src="img/villa.jpg" alt=""><div class="info"><b>The Beach Villa</b><small>Binangonan, Rizal · Villa</small><span class="badge green">Published</span></div><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="The Beach Villa">Delete</a></div></div>
+                </section>
+                <section class="panel list-card">
+                    <div class="panel-head"><h2 class="serif">Eateries</h2><a href="#" data-toast="Opening all 12 eateries…" class="link-btn">View 12 eateries →</a></div>
+                    <div class="item"><img src="img/cafe.jpg" alt=""><div class="info"><b>Cafe Agapita</b><small>Silang, Cavite · Restaurants &amp; Cafes</small><span class="badge green">Published</span></div><div class="cell-actions"><a href="admin-edit-item.html" class="link-btn">Edit</a><a href="#" class="link-btn danger" data-delete="Cafe Agapita">Delete</a></div></div>
+                </section>
+            </div>
+
+            <div class="notice">Deleting a listing requires confirmation. Review existing reservations before removing a published item.</div>
+        </main>
+        
+        <script src="scripts/admin.js"></script>
+    </body>
+</html>
