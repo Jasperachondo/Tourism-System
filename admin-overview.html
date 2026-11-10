@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin Overview - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="admin" data-page="overview" data-crumb="Overview">
+        <main>
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow small">Your daily overview</div>
+                    <h1 class="serif">Magandang araw, Maria.</h1>
+                    <p>A little care behind every meaningful Philippine journey.</p>
+                </div>
+                <a href="admin-add-item.html" class="btn btn-terracotta">＋&nbsp; Add item</a>
+            </div>
+
+            <section class="banner">
+                <div class="banner-text">
+                    <div class="eyebrow small">Keep local discovery moving</div>
+                    <h2 class="serif">Good journeys begin with thoughtful details.</h2>
+                    <p>26 reservations await confirmation and 8 new inquiries need a reply.</p>
+                    <a href="admin-bookings.html" class="link-btn">Review bookings &amp; inquiries →</a>
+                </div>
+                <img src="img/beach.jpg" alt="Sunset over limestone cliffs and a beach">
+            </section>
+
+            <section class="stat-grid">
+                <div class="stat"><div class="top">Destinations <span class="ico">⚲</span></div><div class="num">24</div><div class="note">22 published · 2 drafts</div></div>
+                <div class="stat"><div class="top">Stays <span class="ico">▭</span></div><div class="num">18</div><div class="note">16 published · 2 drafts</div></div>
+                <div class="stat"><div class="top">Eateries <span class="ico">⑂</span></div><div class="num">12</div><div class="note">10 published · 2 drafts</div></div>
+                <div class="stat"><div class="top">Reservations <span class="ico">▤</span></div><div class="num">128</div><div class="note">26 pending confirmation</div></div>
+            </section>
+
+            <div class="two-col">
+                <section class="panel grow">
+                    <div class="panel-head"><h2 class="serif">Recent reservations</h2><a href="admin-bookings.html">View all →</a></div>
+                    <div class="list-head"><span>Lead guest / package</span><span>Status</span></div>
+                    <div class="row-item"><div><b>Juan Dela Cruz</b><small>PT-1028 · Priscilla Palawan Adventure</small></div><span class="badge amber">Pending</span></div>
+                    <div class="row-item"><div><b>Ana Garcia</b><small>PT-1027 · ATV Ride near Mayon Volcano</small></div><span class="badge green">Confirmed</span></div>
+                    <div class="row-item"><div><b>Miguel Torres</b><small>PT-1026 · Island Hopping in Caramoan</small></div><span class="badge green">Confirmed</span></div>
+                </section>
+                <section class="panel side-card">
+                    <div class="panel-head"><h2 class="serif">Recent activity</h2></div>
+                    <div class="activity">
+                        <div class="item"><span class="tick">✓</span><div class="txt"><b>Fort Santiago updated</b><small>Maria Reyes · Destination</small></div><time>09:42</time></div>
+                        <div class="item"><span class="tick">✓</span><div class="txt"><b>Reservation confirmed</b><small>Ana Garcia · PT-1027</small></div><time>09:18</time></div>
+                        <div class="item"><span class="tick">✓</span><div class="txt"><b>Cafe Agapita published</b><small>Luis Mendoza · Eatery</small></div><time>08:55</time></div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="panel">
+                <div class="panel-head"><h2 class="serif">Content at a glance</h2><a href="admin-content.html">Manage content →</a></div>
+                <div class="glance">
+                    <div><b>54 local discoveries</b><span class="sub">Destinations, stays, and eateries in your directory.</span></div>
+                    <div class="chips">
+                        <div class="chip"><span class="badge green">48 published</span>Visible on the travel website</div>
+                        <div class="chip"><span class="badge amber">6 drafts</span>Ready for your next review</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <script src="scripts/admin.js"></script>
+    </body>
+</html>

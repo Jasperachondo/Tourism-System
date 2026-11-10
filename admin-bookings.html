@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bookings and Inquiries - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="admin" data-page="bookings" data-crumb="Bookings & inquiries">
+        <main>
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow small">Reservation gateway</div>
+                    <h1 class="serif">Bookings &amp; inquiries</h1>
+                    <p>Support each guest from their first question to their next island experience.</p>
+                </div>
+                <button class="btn btn-light btn-sm" id="exportBtn" type="button">⤓&nbsp; Export list</button>
+            </div>
+
+            <section class="stat-grid five">
+                <button class="stat filter" data-status="" type="button"><span class="num">128</span><span class="lbl">Total reservations</span></button>
+                <button class="stat filter" data-status="Pending" type="button"><span class="num" id="cPending">26</span><span class="lbl">Pending</span></button>
+                <button class="stat filter" data-status="Confirmed" type="button"><span class="num" id="cConfirmed">84</span><span class="lbl">Confirmed</span></button>
+                <button class="stat filter" data-status="Completed" type="button"><span class="num">12</span><span class="lbl">Completed</span></button>
+                <button class="stat filter" data-status="Cancelled" type="button"><span class="num">6</span><span class="lbl">Cancelled</span></button>
+            </section>
+
+            <section class="panel">
+                <div class="tabs" data-tabs style="margin:-8px 0 24px;border:0">
+                    <button class="active" data-tab="res" style="font-size:14px">Reservations (128)</button>
+                    <button data-tab="inq" style="font-size:14px">Inquiries (14) <span class="badge amber" style="font-size:11px">8 new inquiries</span></button>
+                </div>
+
+                <div class="tab-panel active" data-panel="res">
+                    <div class="toolbar" style="margin-bottom:0">
+                        <div class="search"><input type="search" placeholder="Search reference, guest, or package..." data-filter-for="bookingsTable" aria-label="Search reservations"></div>
+                        <div class="filters">
+                            <select id="statusFilter" data-filter-for="bookingsTable" data-key="status" aria-label="Status"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select>
+                            <input type="date" style="width:auto;background:#fff;font-weight:600" aria-label="Check-in date" id="dateFilter">
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                    <table class="data" id="bookingsTable" data-filterable>
+                        <thead><tr><th>Reference / Lead guest</th><th>Preferred destination / package</th><th>Check-in / out</th><th>Headcount</th><th>Est. total</th><th>Status</th></tr></thead>
+                        <tbody>
+                        <tr class="selectable" data-ref="PT-1028" data-guest="Juan Dela Cruz" data-pkg="Priscilla Palawan Adventure" data-dates="08-12 Nov 2026" data-headcount="2 Adults" data-total="₱31,900" data-status="Pending"
+                            data-meta="5 Days / 4 Nights · Puerto Princesa, El Nido, Coron" data-contact="juan.delacruz@example.com · +63 917 123 4567" data-base="₱29,600" data-air="₱1,500" data-ins="₱800" data-notes="Vegetarian meals preferred." data-img="img/beach.jpg">
+                            <td><span class="ref">PT-1028</span><b>Juan Dela Cruz</b></td><td>Priscilla Palawan Adventure</td><td>08-12 Nov 2026</td><td>2 Adults</td><td>₱31,900</td><td><span class="badge amber">Pending</span></td>
+                        </tr>
+                        <tr class="selectable" data-ref="PT-1027" data-guest="Ana Garcia" data-pkg="ATV Ride near Mayon Volcano" data-dates="07 Nov 2026" data-headcount="2 Adults" data-total="₱5,000" data-status="Confirmed"
+                            data-meta="1 Day · Legazpi, Albay" data-contact="ana.garcia@example.com · +63 918 555 0198" data-base="₱5,000" data-air="—" data-ins="—" data-notes="None." data-img="img/beach.jpg">
+                            <td><span class="ref">PT-1027</span><b>Ana Garcia</b></td><td>ATV Ride near Mayon Volcano</td><td>07 Nov 2026</td><td>2 Adults</td><td>₱5,000</td><td><span class="badge green">Confirmed</span></td>
+                        </tr>
+                        <tr class="selectable" data-ref="PT-1026" data-guest="Miguel Torres" data-pkg="Island Hopping in Caramoan" data-dates="09 Nov 2026" data-headcount="4 Adults" data-total="₱7,400" data-status="Confirmed"
+                            data-meta="1 Day · Caramoan, Camarines Sur" data-contact="miguel.torres@example.com · +63 919 222 0145" data-base="₱7,400" data-air="—" data-ins="—" data-notes="Island buffet options." data-img="img/beach.jpg">
+                            <td><span class="ref">PT-1026</span><b>Miguel Torres</b></td><td>Island Hopping in Caramoan</td><td>09 Nov 2026</td><td>4 Adults</td><td>₱7,400</td><td><span class="badge green">Confirmed</span></td>
+                        </tr>
+                        <tr class="selectable" data-ref="PT-1025" data-guest="Sofia Ramos" data-pkg="Swim with Whale Sharks in Donsol" data-dates="03 Nov 2026" data-headcount="2 Adults" data-total="₱2,640" data-status="Completed"
+                            data-meta="1 Day · Donsol, Sorsogon" data-contact="sofia.ramos@example.com · +63 920 111 0177" data-base="₱2,640" data-air="—" data-ins="—" data-notes="None." data-img="img/beach.jpg">
+                            <td><span class="ref">PT-1025</span><b>Sofia Ramos</b></td><td>Swim with Whale Sharks in Donsol</td><td>03 Nov 2026</td><td>2 Adults</td><td>₱2,640</td><td><span class="badge green">Completed</span></td>
+                        </tr>
+                        <tr class="selectable" data-ref="PT-1024" data-guest="Paolo Lim" data-pkg="Cagsawa Ruins Explorer Pass" data-dates="06 Nov 2026" data-headcount="1 Adult" data-total="₱899" data-status="Cancelled"
+                            data-meta="1 Day · Daraga, Albay" data-contact="paolo.lim@example.com · +63 921 000 0123" data-base="₱899" data-air="—" data-ins="—" data-notes="Cancelled by guest." data-img="img/beach.jpg">
+                            <td><span class="ref">PT-1024</span><b>Paolo Lim</b></td><td>Cagsawa Ruins Explorer Pass</td><td>06 Nov 2026</td><td>1 Adult</td><td>₱899</td><td><span class="badge red">Cancelled</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <p id="bookingsTable-empty" class="sub" hidden style="padding:20px 0">No reservations match your filters.</p>
+                    <div class="table-foot">
+                        <span>Showing 1–<span id="bookingsTable-count">5</span> of 128 reservations</span>
+                        <div class="pager"><button>Previous</button><button class="current">1</button><button>Next</button></div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" data-panel="inq"><p class="sub">Select an inquiry from the queue below to read and answer it.</p></div>
+            </section>
+
+            <div class="two-col">
+                <section class="panel grow">
+                    <h2 class="serif" style="margin-bottom:22px">Reservation Summary</h2>
+                    <div class="summary">
+                        <img id="sImg" src="img/beach.jpg" alt="">
+                        <div>
+                            <b id="sRef" style="font-size:13px">PT-1028</b> &nbsp;<span class="badge amber" id="sStatus">Pending</span>
+                            <h3 id="sTitle">Priscilla Palawan Adventure</h3>
+                            <div class="meta">
+                                <div id="sMeta"></div>
+                                <div class="guest" id="sGuest"></div>
+                                <div id="sContact"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="breakdown">
+                        <div>Base package<b id="sBase"></b></div>
+                        <div>Airport Transfer<b id="sAir"></b></div>
+                        <div>Travel Insurance<b id="sIns"></b></div>
+                        <div class="total">Estimated Total<b id="sTotal"></b></div>
+                    </div>
+                    <div class="confirm-row"><span id="sNotes"></span><button class="btn btn-terracotta btn-sm" id="confirmBtn" type="button">Confirm reservation</button></div>
+                </section>
+
+                <section class="panel side-card">
+                    <div class="panel-head"><h2 class="serif">Inquiry queue</h2><a href="#" class="link-btn" data-toast="Showing all 14 inquiries">View 14 →</a></div>
+                    <div class="inq-item" data-id="INQ-014" data-when="04 Nov 2026, 09:30" data-msg="Can we arrange a group island-hopping trip in Caramoan for six adults?" data-mail="sofia.ramos@example.com"><div><b>INQ-014 · Sofia Ramos</b><small>Caramoan group trip</small></div><span class="badge amber">New</span></div>
+                    <div class="inq-item" data-id="INQ-013" data-when="04 Nov 2026, 08:12" data-msg="Where is the ATV pickup location, and can we be fetched from our hotel?" data-mail="ana.garcia@example.com"><div><b>INQ-013 · Ana Garcia</b><small>ATV pickup location</small></div><span class="badge amber">New</span></div>
+                    <div class="inq-item" data-id="INQ-012" data-when="03 Nov 2026, 16:45" data-msg="Does the island tour include a buffet lunch with vegetarian options?" data-mail="miguel.torres@example.com"><div><b>INQ-012 · Miguel Torres</b><small>Island buffet options</small></div><span class="badge green">Replied</span></div>
+                    <div class="inq-detail" id="inqDetail" data-active="INQ-014">
+                        <div class="when" id="iWhen">INQ-014 · 04 Nov 2026, 09:30</div>
+                        <blockquote id="iMsg">“Can we arrange a group island-hopping trip in Caramoan for six adults?”</blockquote>
+                        <div class="mail" id="iMail">sofia.ramos@example.com</div>
+                        <div class="btns"><button class="btn btn-terracotta btn-sm" id="replyBtn" type="button">Reply</button><button class="btn btn-light btn-sm" id="markReplied" type="button">Mark replied</button></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <script src="scripts/admin.js"></script>
+        <script>
+            // Optional: check-in date filter (matches rows whose check-in text contains the picked day)
+            document.getElementById('dateFilter').addEventListener('change', function () {
+                const rows = document.querySelectorAll('#bookingsTable tbody tr');
+                if (!this.value) { rows.forEach(r => r.hidden = false); return; }
+                const d = new Date(this.value);
+                const day = String(d.getDate()).padStart(2, '0');
+                const mon = d.toLocaleString('en', { month: 'short' });
+                rows.forEach(r => r.hidden = !r.dataset.dates.includes(`${day} ${mon}`) && !r.dataset.dates.startsWith(day));
+            });
+        </script>
+    </body>
+</html>

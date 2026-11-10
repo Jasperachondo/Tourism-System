@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add Item - Pilipinas Travel</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/admin.css">
+    </head>
+    <body class="admin-body" data-role="admin" data-page="content" data-crumb="Content management">
+        <main>
+            <div class="page-head">
+                <div>
+                    <div class="eyebrow small">Content management / Add item</div>
+                    <h1 class="serif">Add a local discovery</h1>
+                    <p>Introduce a place worth knowing. Fields marked * are required.</p>
+                </div>
+                <a href="admin-content.html" class="btn btn-light btn-sm">← &nbsp;Back to content</a>
+            </div>
+
+            <form id="itemForm" data-validate novalidate>
+                <div class="field-label-top" style="margin-bottom:12px">Item type *</div>
+                <div class="type-grid">
+                    <label class="type-card"><input type="radio" name="type" value="destination"><span class="ico">⚲</span><span><b>Destination</b><small>Landmarks, heritage &amp; nature</small></span></label>
+                    <label class="type-card"><input type="radio" name="type" value="stay" checked><span class="ico">▭</span><span><b>Stay</b><small>Hotels, eco-lodges &amp; villas</small></span></label>
+                    <label class="type-card"><input type="radio" name="type" value="eatery"><span class="ico">⑂</span><span><b>Eatery</b><small>Restaurants, cafes &amp; kitchens</small></span></label>
+                </div>
+
+                <div class="form-layout" style="margin-top:22px">
+                    <div class="form-main">
+                        <section class="panel">
+                            <h2 class="form-title serif">The essentials</h2>
+                            <div class="form-grid">
+                                <div class="field full"><label id="nameLabel" for="itemName">Stay name *</label><input id="itemName" required placeholder="e.g. A locally owned eco-lodge"></div>
+                                <div class="field"><label for="itemCategory">Category *</label><select id="itemCategory" required></select></div>
+                                <div class="field"><label for="region">Region *</label><select id="region" required><option value="">Select region</option><option>Metro Manila</option><option>Calabarzon</option><option>Palawan</option><option>Ilocos Region</option><option>Bicol Region</option></select></div>
+                                <div class="field"><label for="city">City / municipality *</label><input id="city" required placeholder="e.g. Lipa, Batangas"></div>
+                                <div class="field"><label for="street">Street address *</label><input id="street" required placeholder="Street, barangay, and postal code"></div>
+                                <div class="field full"><label for="desc">Description *</label><textarea id="desc" required placeholder="Tell travelers about the place, its local character, and what makes it special."></textarea></div>
+                            </div>
+                        </section>
+
+                        <section class="panel type-section" data-type="stay">
+                            <h2 class="form-title serif">Stay details</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="rate">Nightly rate from (PHP) *</label><input id="rate" type="number" min="0" required placeholder="e.g. 4,500"></div>
+                                <div class="field"><label for="room">Room type *</label><select id="room" required><option value="">Select room type</option><option>Double</option><option>Twin</option><option>Family</option><option>Villa</option></select></div>
+                                <div class="field"><label for="cin">Check-in time *</label><input id="cin" value="14:00" required></div>
+                                <div class="field"><label for="cout">Check-out time *</label><input id="cout" value="12:00" required></div>
+                                <div class="field full"><label for="amen">Amenities &amp; accessibility</label><input id="amen" placeholder="e.g. Wi-Fi, breakfast, step-free access"></div>
+                            </div>
+                        </section>
+
+                        <section class="panel type-section" data-type="destination" hidden>
+                            <h2 class="form-title serif">Visitor information</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="hours">Opening hours *</label><input id="hours" required placeholder="e.g. 08:30 - 17:00"></div>
+                                <div class="field"><label for="adm">Admission *</label><input id="adm" required placeholder="e.g. Free Admission"></div>
+                                <div class="field full"><label for="acc">Accessibility information</label><input id="acc" placeholder="e.g. Ramped paths"></div>
+                                <div class="field full"><label for="vnotes">Visitor notes</label><input id="vnotes" placeholder="e.g. Wear comfortable walking shoes"></div>
+                            </div>
+                        </section>
+
+                        <section class="panel type-section" data-type="eatery" hidden>
+                            <h2 class="form-title serif">Eatery details</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="cuisine">Cuisine *</label><input id="cuisine" required placeholder="e.g. Filipino, Cafe"></div>
+                                <div class="field"><label for="price">Price range *</label><select id="price" required><option value="">Select price range</option><option>₱</option><option>₱₱</option><option>₱₱₱</option></select></div>
+                                <div class="field"><label for="open">Service hours *</label><input id="open" required placeholder="e.g. 08:00 - 21:00"></div>
+                                <div class="field"><label for="dietary">Dietary options</label><input id="dietary" placeholder="e.g. Vegetarian, halal"></div>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <h2 class="form-title serif">Contact information</h2>
+                            <div class="form-grid">
+                                <div class="field"><label for="email">Email address *</label><input id="email" type="email" required placeholder="stay@example.com"></div>
+                                <div class="field"><label for="phone">Phone number *</label><input id="phone" type="tel" required placeholder="+63"></div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <aside class="form-side">
+                        <section class="panel">
+                            <h2 class="form-title serif">Publishing</h2>
+                            <div class="field" style="margin-top:22px"><label for="visibility">Visibility</label>
+                                <select id="visibility"><option>Draft</option><option>Published</option></select></div>
+                            <p class="sub" id="visHint" style="font-size:12px;margin:18px 0 14px">Drafts stay private until you choose to publish them.</p>
+                            <span class="badge" id="newBadge">New stay</span>
+                        </section>
+                        <section class="panel">
+                            <h2 class="form-title serif">Cover image</h2>
+                            <div class="drop" id="dropZone"><span class="ico">🖼</span><b>Choose image or drag it here</b><span>JPG or PNG · up to 5 MB</span></div>
+                            <input type="file" id="coverFile" accept="image/jpeg,image/png" hidden>
+                            <p class="sub" style="font-size:12px;margin-top:18px">Use a landscape photo that reflects the place accurately. Add descriptive alt text after upload.</p>
+                        </section>
+                        <section class="tint-note">
+                            <h3>A thoughtful listing</h3>
+                            Verify local ownership, contact details, prices, and access information before publishing.
+                            <small>Type-specific fields: destinations use opening hours, admission, and access; eateries use cuisine, price range, and service hours.</small>
+                        </section>
+                    </aside>
+                </div>
+
+                <div class="form-bar" style="margin-top:22px">
+                    <span id="saveStatus">Nothing saved yet.</span>
+                    <div class="btns">
+                        <button type="button" class="btn btn-light btn-sm" id="cancelBtn">Cancel</button>
+                        <button type="button" class="btn btn-light btn-sm" id="saveDraft">Save draft</button>
+                        <button type="submit" class="btn btn-terracotta btn-sm" id="publishBtn">Publish stay</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        
+        <script src="scripts/admin.js"></script>
+    </body>
+</html>
